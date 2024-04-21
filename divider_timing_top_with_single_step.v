@@ -115,7 +115,7 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 								.Clk(sys_clk), .Reset(Reset), .SCEN(SCEN), 
 								.Done(Done),  .card1(card1), .card2(card2), .card3(card3), .card4(card4), .card5(card5), 
 								.player1card1(player1card1), .player1card2(player1card2), .player2card1(player2card1), 
-								.player2card2(player2card1), .playerTurn(playerTurn), .dispCards(dispCards));	
+								.player2card2(player2card1), .playerTurn(playerTurn), .dispCards(dispCards), .winner(winner), .gameover(gameover));	
 													
 
 //------------
@@ -134,6 +134,8 @@ ee201_debouncer #(.N_dc(25)) ee201_debouncer_1
 		
 	
 	
+	assign winner = winner;
+	assign gameover = gameover;
 	
 	assign SSD7 = (playerTurn == 0) ? 4'b0001 : 4'b0010;
 	assign SSD6 = card5;	

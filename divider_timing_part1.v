@@ -16,6 +16,8 @@ input SCEN;
 output [3:0] card1, card2, card3, card4, card5, player1card1, player1card2, player2card1, player2card2;
 output playerTurn;
 output dispCards;
+output gameover;
+output winner;
 
 reg [3:0] card1, card2, card3, card4, card5, player1card1, player1card2, player2card1, player2card2;
 reg [5:0] gamestate;
@@ -28,8 +30,17 @@ reg [3:0] player1_data [0:6]
 reg [3:0] player2_data [0:6]
 reg [3:0] i, j;
 reg [3:0] temp;
+reg[3:0] player1highcard;
+reg[3:0] player2highcard;
+reg[2:0] player1hand;
+reg[2:0] player2hand;
 reg player1sorted;
 reg player2sorted;
+reg player1High;
+reg player2High;
+reg gameover;
+reg winner;
+reg [2:0] numpairs;
 
 localparam
 START = 5'b00001,
@@ -44,6 +55,14 @@ BET	= 6'b000100;
 CALL = 6'b001000;
 FOLD = 6'b010000;
 WINNER = 6'b100000
+
+HIGHCARD = 3'b000;
+PAIR = 3'b001;
+TWOPAIR = 3'b010;
+THREE = 3'b011;
+STRAIGHT = 3'b100;
+FULLHOUSE = 3'b101;
+FOUR = 3'b110;
 
 assign {Q5card, Q4card, Q3card, Qhand, Qstart} = state;
 
@@ -71,21 +90,24 @@ always @(posedge Clk, posedge Reset)
            dispCards <= 0;
            player1sorted <= 0;
            player2sorted <= 0;
-            player1_data[0] <= card1;
-            player1_data[1] <= card2;
-            player1_data[2] <= card3;
-            player1_data[3] <= card4;
-            player1_data[4] <= card5;
-            player1_data[5] <= player1card1;
-            player1_data[6] <= player1card2;
+           player1High <= 0;
+           player2High <= 0;
+           gameover <= 0;
+            player1_data[0] <= 0;
+            player1_data[1] <= 0;
+            player1_data[2] <= 0;
+            player1_data[3] <= 0;
+            player1_data[4] <= 0;
+            player1_data[5] <= 0;
+            player1_data[6] <= 0;
 
-            player2_data[0] <= card1;
-            player2_data[1] <= card2;
-            player2_data[2] <= card3;
-            player2_data[3] <= card4;
-            player2_data[4] <= card5;
-            player2_data[5] <= player2card1;
-            player2_data[6] <= player2card2;
+            player2_data[0] <= 0;
+            player2_data[1] <= 0;
+            player2_data[2] <= 0;
+            player2_data[3] <= 0;
+            player2_data[4] <= 0;
+            player2_data[5] <= 0;
+            player2_data[6] <= 0;
        end
     else
        begin
@@ -114,21 +136,24 @@ always @(posedge Clk, posedge Reset)
                       dispCards <= 0;
                       player1sorted <= 0;
                       player2sorted <= 0;
-                      player1_data[0] <= card1;
-                      player1_data[1] <= card2;
-                      player1_data[2] <= card3;
-                      player1_data[3] <= card4;
-                      player1_data[4] <= card5;
-                      player1_data[5] <= player1card1;
-                      player1_data[6] <= player1card2;
+                      player1High <= 0;
+                      player2High <= 0;
+                       gameover <= 0;
+                      player1_data[0] <= 0;
+                      player1_data[1] <= 0;
+                      player1_data[2] <= 0;
+                      player1_data[3] <= 0;
+                      player1_data[4] <= 0;
+                      player1_data[5] <= 0;
+                      player1_data[6] <= 0;
 
-                      player2_data[0] <= card1;
-                      player2_data[1] <= card2;
-                      player2_data[2] <= card3;
-                      player2_data[3] <= card4;
-                      player2_data[4] <= card5;
-                      player2_data[5] <= player2card1;
-                      player2_data[6] <= player2card2;
+                      player2_data[0] <= 0;
+                      player2_data[1] <= 0;
+                      player2_data[2] <= 0;
+                      player2_data[3] <= 0;
+                      player2_data[4] <= 0;
+                      player2_data[5] <= 0;
+                      player2_data[6] <= 0;
                   end
               end
             HAND :
@@ -536,6 +561,10 @@ always @(posedge Clk, posedge Reset)
               end 
               WINNER :
               begin
+                if(Ack)
+                begin
+                  state <= START;
+                end
                 if(flag == 0)
                 begin
                   flag <= 1;
@@ -599,6 +628,210 @@ always @(posedge Clk, posedge Reset)
                  end
                  player2sorted <= 1;
                 end
+                else if(player1High == 0)//where we find the actual winner :)
+                begin // 0 1 2 3 4 5 6
+                    //player1 best hand
+                    if(player1_data[0] == player1_data[3] || player1_data[1] == player1_data[4] ||
+                    player1_data[2] == player1_data[5] || player1_data[3] == player1_data[6])
+                    begin
+                       player1hand <= FOUR;
+                      player1highcard <= player1_data[6];
+                    end
+                    else if((player1_data[6] == player1_data[4] && (player1_data[3] == player1_data[2] || player1_data[2] == player1_data[1] || player1_data[1] == player1_data[0]))
+                    || (player1_data[5] == player1_data[3] && (player1_data[2] == player1_data[1] || player1_data[1] == player1_data[0]))
+                   )
+                    begin
+                      player1hand <= FULLHOUSE;
+                      player1highcard <= player1_data[6];
+                    end
+                     else if((player1_data[4] == player1_data[2] && (player1_data[6] == player1_data[5] || player1_data[1] == player1_data[0]))
+                    || (player1_data[3] == player1_data[1] && (player1_data[6] == player1_data[5] || player1_data[5] == player1_data[4]))
+                    || (player1_data[2] == player1_data[0] && (player1_data[6] == player1_data[5] || player1_data[5] == player1_data[4] || player1_data[4] == player1_data[3]))
+                    || )
+                    begin
+                      player1hand <= FULLHOUSE;
+                      if(player1_data[6] == player1_data[5])
+                      begin
+                        player1highcard <= player1_data[6];
+                      end
+                      else if(player1_data[5] == player1_data[4])
+                      begin
+                        player1highcard <= player1_data[5];
+                      end
+                      else
+                      begin
+                        player1highcard <= player1_data[4];
+                      end
+                    end
+                    else if(player1_data[5] + 1 == player1_data[6] && player1_data[4] + 1 == player1_data[5] && player1_data[2] + 1 == player1_data[3]
+                     && player1_data[3] + 1 == player1_data[4])
+                    begin
+                      player1hand <= STRAIGHT;
+                      player1highcard <= player1_data[6];
+                    end
+                    else if(player1_data[4] + 1 == player1_data[5] && player1_data[1] + 1 == player1_data[2] && player1_data[2] + 1 == player1_data[3]
+                     && player1_data[3] + 1 == player1_data[4])
+                    begin
+                      player1hand <= STRAIGHT;
+                      player1highcard <= player1_data[5];
+                    end
+                    else if(player1_data[0] + 1 == player1_data[1] && player1_data[1] + 1 == player1_data[2] && player1_data[2] + 1 == player1_data[3]
+                     && player1_data[3] + 1 == player1_data[4])
+                    begin
+                      player1hand <= STRAIGHT;
+                      player1highcard <= player1_data[4];
+                    end
+                    else if(player1_data[0] == player1_data[2] || player1_data[1] == player1_data[3] ||
+                    player1_data[2] == player1_data[4] || player1_data[3] == player1_data[5] || player1_data[4] == player1_data[6])
+                    begin
+                      player1hand <= THREE;
+                      player1highcard <= player1_data[6];
+                    end
+                    else if(player1_data[0] == player1_data[1] || player1_data[1] == player1_data[2] ||
+                    player1_data[2] == player1_data[3] || player1_data[3] == player1_data[4] || player1_data[4] == player1_data[5] || player1_data[6] == player1_data[5])
+                    begin
+                      numpairs = 0;
+                       for (i = 1; i < 7; i = i + 1) 
+                    begin
+                      if(player1_data[i] == player1_data[i-1])
+                      begin
+                        numpairs = numpairs + 1;
+                      end
+                    end
+                      if(numpairs > 1)
+                      begin
+                      player1hand <= TWOPAIR;
+                      player1highcard <= player1_data[6];
+                      end
+                      else
+                      begin
+                      player1hand <= PAIR;
+                      player1highcard <= player1_data[6];
+                      end
+                    end
+                    else
+                    begin
+                      player1hand <= HIGHCARD;
+                      player1highcard <= player1_data[6];
+                    end
+                    player1High <= 1;
+                end
+
+
+
+                else if(player2High == 0)//where we find the actual winner :)
+                begin // 0 1 2 3 4 5 6
+                    //player1 best hand
+                    if(player2_data[0] == player2_data[3] || player2_data[1] == player2_data[4] ||
+                    player2_data[2] == player2_data[5] || player2_data[3] == player2_data[6])
+                    begin
+                       player2hand <= FOUR;
+                      player2highcard <= player2_data[6];
+                    end
+                    else if((player2_data[6] == player2_data[4] && (player2_data[3] == player2_data[2] || player2_data[2] == player2_data[1] || player2_data[1] == player2_data[0]))
+                    || (player2_data[5] == player2_data[3] && (player2_data[2] == player2_data[1] || player2_data[1] == player2_data[0]))
+                   )
+                    begin
+                      player2hand <= FULLHOUSE;
+                      player2highcard <= player2_data[6];
+                    end
+                    else if((player2_data[4] == player2_data[2] && (player2_data[6] == player2_data[5] || player2_data[1] == player2_data[0]))
+                    || (player2_data[3] == player2_data[1] && (player2_data[6] == player2_data[5] || player2_data[5] == player2_data[4]))
+                    || (player2_data[2] == player2_data[0] && (player2_data[6] == player2_data[5] || player2_data[5] == player2_data[4] || player2_data[4] == player2_data[3]))
+                    || )
+                    begin
+                      player2hand <= FULLHOUSE;
+                      if(player2_data[6] == player2_data[5])
+                      begin
+                        player2highcard <= player2_data[6];
+                      end
+                      else if(player2_data[5] == player2_data[4])
+                      begin
+                        player2highcard <= player2_data[5];
+                      end
+                      else
+                      begin
+                        player2highcard <= player2_data[4];
+                      end
+                    end
+                    else if(player2_data[5] + 1 == player2_data[6] && player2_data[4] + 1 == player2_data[5] && player2_data[2] + 1 == player2_data[3]
+                     && player2_data[3] + 1 == player2_data[4])
+                    begin
+                      player2hand <= STRAIGHT;
+                      player2highcard <= player2_data[6];
+                    end
+                    else if(player2_data[4] + 1 == player2_data[5] && player2_data[1] + 1 == player2_data[2] && player2_data[2] + 1 == player2_data[3]
+                     && player2_data[3] + 1 == player2_data[4])
+                    begin
+                      player2hand <= STRAIGHT;
+                      player2highcard <= player2_data[5];
+                    end
+                    else if(player2_data[0] + 1 == player2_data[1] && player2_data[1] + 1 == player2_data[2] && player2_data[2] + 1 == player2_data[3]
+                     && player2_data[3] + 1 == player2_data[4])
+                    begin
+                      player2hand <= STRAIGHT;
+                      player2highcard <= player2_data[4];
+                    end
+                    else if(player2_data[0] == player2_data[2] || player2_data[1] == player2_data[3] ||
+                    player2_data[2] == player2_data[4] || player2_data[3] == player2_data[5] || player2_data[4] == player2_data[6])
+                    begin
+                      player2hand <= THREE;
+                      player2highcard <= player2_data[6];
+                    end
+                    else if(player2_data[0] == player2_data[1] || player2_data[1] == player2_data[2] ||
+                    player2_data[2] == player2_data[3] || player2_data[3] == player2_data[4] || player2_data[4] == player2_data[5] || player2_data[6] == player2_data[5])
+                    begin
+                      numpairs = 0;
+                       for (i = 1; i < 7; i = i + 1) 
+                    begin
+                      if(player2_data[i] == player2_data[i-1])
+                      begin
+                        numpairs = numpairs + 1;
+                      end
+                    end
+                      if(numpairs > 1)
+                      begin
+                      player2hand <= TWOPAIR;
+                      player2highcard <= player2_data[6];
+                      end
+                      else
+                      begin
+                      player2hand <= PAIR;
+                      player2highcard <= player2_data[6];
+                      end
+                    end
+                    else
+                    begin
+                      player2hand <= HIGHCARD;
+                      player2highcard <= player2_data[6];
+                    end
+                    player2High <= 1;
+                end
+              else
+              begin
+                  gameover <= 1;
+                  if(player1hand > player2hand)
+                  begin
+                    winner <= 0; //0 is player1 wins
+                  end
+                  else if(player1hand < player2hand)
+                  begin
+                    winner <= 1; //1 is player2 wins
+                  end
+                  else
+                  begin
+                    if(player1highcard >= player2highcard) //currently ties go to player 1 ummm yeah
+                    begin
+                      winner <= 0;
+                    end
+                    else
+                    begin
+                      winner <= 1;
+                    end
+                  end
+              end
+
+
               end
       endcase
     end 

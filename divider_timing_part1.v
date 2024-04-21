@@ -561,7 +561,7 @@ always @(posedge Clk, posedge Reset)
               end 
               WINNER :
               begin
-                if(Ack)
+                if(Ack && gameover == 1)
                 begin
                   state <= START;
                 end

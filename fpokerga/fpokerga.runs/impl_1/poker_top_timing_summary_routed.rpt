@@ -1,0 +1,1663 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Fri Apr 26 22:43:11 2024
+| Host         : GDESK-59 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file poker_top_timing_summary_routed.rpt -pb poker_top_timing_summary_routed.pb -rpx poker_top_timing_summary_routed.rpx -warn_on_violation
+| Design       : poker_top
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (14)
+6. checking no_output_delay (15)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (14)
+-------------------------------
+ There are 14 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (15)
+--------------------------------
+ There are 0 ports with no output delay specified.
+
+ There are 15 ports with no output delay but user has a false path constraint (MEDIUM)
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     29.604        0.000                      0                  848        0.105        0.000                      0                  848       24.500        0.000                       0                   388  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock    Waveform(ns)       Period(ns)      Frequency(MHz)
+-----    ------------       ----------      --------------
+ClkPort  {0.000 25.000}     50.000          20.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+ClkPort            29.604        0.000                      0                  848        0.105        0.000                      0                  848       24.500        0.000                       0                   388  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  ClkPort
+  To Clock:  ClkPort
+
+Setup :            0  Failing Endpoints,  Worst Slack       29.604ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.105ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack       24.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             29.604ns  (required time - arrival time)
+  Source:                 poker/player1_data_reg[2][2]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            poker/player1_data_reg[1][0]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (ClkPort rise@50.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        20.319ns  (logic 4.353ns (21.424%)  route 15.966ns (78.576%))
+  Logic Levels:           18  (LUT2=1 LUT4=4 LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.121ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.926ns = ( 54.926 - 50.000 ) 
+    Source Clock Delay      (SCD):    5.306ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           2.025     3.506    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.704     5.306    poker/board_clk
+    SLICE_X6Y137         FDCE                                         r  poker/player1_data_reg[2][2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y137         FDCE (Prop_fdce_C_Q)         0.518     5.824 f  poker/player1_data_reg[2][2]/Q
+                         net (fo=16, routed)          2.130     7.954    poker/player1_data_reg[2]_13[2]
+    SLICE_X14Y140        LUT6 (Prop_lut6_I0_O)        0.124     8.078 f  poker/player1_data[6][2]_i_24/O
+                         net (fo=9, routed)           0.610     8.689    poker/player1_data[6][2]_i_24_n_0
+    SLICE_X13Y139        LUT5 (Prop_lut5_I2_O)        0.119     8.808 f  poker/player1_data[6][2]_i_14/O
+                         net (fo=12, routed)          0.958     9.766    poker/player1_data[6][2]_i_14_n_0
+    SLICE_X14Y138        LUT6 (Prop_lut6_I3_O)        0.332    10.098 r  poker/player1_data[6][2]_i_37/O
+                         net (fo=2, routed)           0.822    10.920    poker/player1_data[6][2]_i_37_n_0
+    SLICE_X14Y139        LUT6 (Prop_lut6_I3_O)        0.124    11.044 r  poker/player1_data[6][2]_i_28/O
+                         net (fo=1, routed)           0.701    11.745    poker/player1_data[6][2]_i_28_n_0
+    SLICE_X15Y139        LUT6 (Prop_lut6_I0_O)        0.124    11.869 r  poker/player1_data[6][2]_i_16/O
+                         net (fo=16, routed)          0.909    12.778    poker/player1_data[6][2]_i_16_n_0
+    SLICE_X10Y139        LUT5 (Prop_lut5_I1_O)        0.124    12.902 f  poker/player1_data[5][1]_i_12/O
+                         net (fo=6, routed)           1.348    14.250    poker/player1_data[5][1]_i_12_n_0
+    SLICE_X8Y141         LUT4 (Prop_lut4_I2_O)        0.152    14.402 r  poker/player1_data[5][2]_i_23/O
+                         net (fo=2, routed)           0.519    14.920    poker/player1_data[5][2]_i_23_n_0
+    SLICE_X9Y141         LUT6 (Prop_lut6_I4_O)        0.348    15.268 r  poker/player1_data[5][1]_i_5/O
+                         net (fo=6, routed)           1.084    16.352    poker/player1_data[5][1]_i_5_n_0
+    SLICE_X7Y140         LUT2 (Prop_lut2_I0_O)        0.152    16.504 r  poker/player1_data[5][2]_i_11/O
+                         net (fo=1, routed)           0.479    16.983    poker/player1_data[5][2]_i_11_n_0
+    SLICE_X6Y140         LUT6 (Prop_lut6_I2_O)        0.326    17.309 r  poker/player1_data[5][2]_i_5/O
+                         net (fo=13, routed)          0.933    18.242    poker/player1_data[5][2]_i_5_n_0
+    SLICE_X5Y139         LUT4 (Prop_lut4_I2_O)        0.150    18.392 r  poker/player1_data[4][1]_i_6/O
+                         net (fo=2, routed)           0.817    19.209    poker/player1_data[4][1]_i_6_n_0
+    SLICE_X4Y140         LUT6 (Prop_lut6_I2_O)        0.326    19.535 r  poker/player1_data[4][1]_i_3/O
+                         net (fo=8, routed)           1.014    20.550    poker/player1_data[4][1]_i_3_n_0
+    SLICE_X4Y138         LUT4 (Prop_lut4_I0_O)        0.152    20.702 r  poker/player1_data[4][2]_i_17/O
+                         net (fo=1, routed)           0.495    21.197    poker/player1_data[4][2]_i_17_n_0
+    SLICE_X4Y139         LUT6 (Prop_lut6_I3_O)        0.326    21.523 r  poker/player1_data[4][2]_i_6/O
+                         net (fo=7, routed)           0.847    22.370    poker/player1_data[4][2]_i_6_n_0
+    SLICE_X4Y137         LUT4 (Prop_lut4_I2_O)        0.152    22.522 r  poker/player1_data[3][2]_i_8/O
+                         net (fo=1, routed)           0.436    22.958    poker/player1_data[3][2]_i_8_n_0
+    SLICE_X4Y137         LUT6 (Prop_lut6_I5_O)        0.326    23.284 r  poker/player1_data[3][2]_i_4/O
+                         net (fo=8, routed)           1.020    24.304    poker/player1_data[3][2]_i_4_n_0
+    SLICE_X7Y137         LUT5 (Prop_lut5_I3_O)        0.152    24.456 r  poker/player1_data[2][0]_i_3/O
+                         net (fo=2, routed)           0.843    25.299    poker/player1_data[2][0]_i_3_n_0
+    SLICE_X8Y137         LUT6 (Prop_lut6_I1_O)        0.326    25.625 r  poker/player1_data[1][0]_i_1/O
+                         net (fo=1, routed)           0.000    25.625    poker/player1_data[1][0]_i_1_n_0
+    SLICE_X8Y137         FDCE                                         r  poker/player1_data_reg[1][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   50.000    50.000 r  
+    E3                                                0.000    50.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    50.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    51.411 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           1.920    53.331    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    53.422 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.504    54.926    poker/board_clk
+    SLICE_X8Y137         FDCE                                         r  poker/player1_data_reg[1][0]/C
+                         clock pessimism              0.259    55.185    
+                         clock uncertainty           -0.035    55.150    
+    SLICE_X8Y137         FDCE (Setup_fdce_C_D)        0.079    55.229    poker/player1_data_reg[1][0]
+  -------------------------------------------------------------------
+                         required time                         55.229    
+                         arrival time                         -25.625    
+  -------------------------------------------------------------------
+                         slack                                 29.604    
+
+Slack (MET) :             29.616ns  (required time - arrival time)
+  Source:                 poker/player2_data_reg[2][1]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            poker/player2_data_reg[1][3]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (ClkPort rise@50.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        20.352ns  (logic 3.792ns (18.632%)  route 16.560ns (81.368%))
+  Logic Levels:           19  (LUT4=1 LUT5=4 LUT6=14)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.920ns = ( 54.920 - 50.000 ) 
+    Source Clock Delay      (SCD):    5.223ns
+    Clock Pessimism Removal (CPR):    0.277ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           2.025     3.506    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.621     5.223    poker/board_clk
+    SLICE_X8Y132         FDCE                                         r  poker/player2_data_reg[2][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y132         FDCE (Prop_fdce_C_Q)         0.518     5.741 f  poker/player2_data_reg[2][1]/Q
+                         net (fo=17, routed)          1.566     7.308    poker/player2_data_reg[2]_20[1]
+    SLICE_X10Y124        LUT6 (Prop_lut6_I2_O)        0.124     7.432 f  poker/player2_data[6][2]_i_34/O
+                         net (fo=11, routed)          0.702     8.134    poker/player2_data[6][2]_i_34_n_0
+    SLICE_X14Y125        LUT6 (Prop_lut6_I3_O)        0.124     8.258 r  poker/player2_data[6][2]_i_44/O
+                         net (fo=2, routed)           1.407     9.665    poker/player2_data[6][2]_i_44_n_0
+    SLICE_X11Y125        LUT6 (Prop_lut6_I2_O)        0.124     9.789 r  poker/player2_data[6][2]_i_38/O
+                         net (fo=2, routed)           1.341    11.130    poker/player2_data[6][2]_i_38_n_0
+    SLICE_X14Y123        LUT6 (Prop_lut6_I2_O)        0.124    11.254 r  poker/player2_data[4][2]_i_49/O
+                         net (fo=1, routed)           0.162    11.416    poker/player2_data[4][2]_i_49_n_0
+    SLICE_X14Y123        LUT6 (Prop_lut6_I0_O)        0.124    11.540 r  poker/player2_data[4][2]_i_29/O
+                         net (fo=12, routed)          0.486    12.026    poker/player2_data[4][2]_i_29_n_0
+    SLICE_X15Y123        LUT6 (Prop_lut6_I1_O)        0.124    12.150 r  poker/player2_data[4][2]_i_66/O
+                         net (fo=2, routed)           1.267    13.417    poker/player2_data[4][2]_i_66_n_0
+    SLICE_X15Y127        LUT6 (Prop_lut6_I1_O)        0.124    13.541 r  poker/player2_data[4][2]_i_57/O
+                         net (fo=4, routed)           0.872    14.413    poker/player2_data[4][2]_i_57_n_0
+    SLICE_X14Y127        LUT6 (Prop_lut6_I3_O)        0.124    14.537 f  poker/player2_data[4][2]_i_35/O
+                         net (fo=1, routed)           0.663    15.201    poker/player2_data[4][2]_i_35_n_0
+    SLICE_X14Y127        LUT6 (Prop_lut6_I4_O)        0.124    15.325 r  poker/player2_data[4][2]_i_12/O
+                         net (fo=8, routed)           1.048    16.373    poker/player2_data[4][2]_i_12_n_0
+    SLICE_X14Y128        LUT5 (Prop_lut5_I1_O)        0.150    16.523 r  poker/player2_data[4][2]_i_3/O
+                         net (fo=8, routed)           1.142    17.665    poker/player2_data[4][2]_i_3_n_0
+    SLICE_X14Y131        LUT4 (Prop_lut4_I0_O)        0.354    18.019 r  poker/player2_data[4][2]_i_21/O
+                         net (fo=1, routed)           0.652    18.670    poker/player2_data[4][2]_i_21_n_0
+    SLICE_X15Y131        LUT6 (Prop_lut6_I5_O)        0.328    18.998 r  poker/player2_data[4][2]_i_4/O
+                         net (fo=12, routed)          0.733    19.731    poker/player2_data[4][2]_i_4_n_0
+    SLICE_X12Y132        LUT5 (Prop_lut5_I3_O)        0.148    19.879 f  poker/player2_data[4][0]_i_3/O
+                         net (fo=5, routed)           0.859    20.738    poker/player2_data[4][0]_i_3_n_0
+    SLICE_X11Y132        LUT6 (Prop_lut6_I1_O)        0.328    21.066 r  poker/player2_data[4][2]_i_6/O
+                         net (fo=11, routed)          0.391    21.457    poker/player2_data[4][2]_i_6_n_0
+    SLICE_X12Y132        LUT5 (Prop_lut5_I3_O)        0.124    21.581 f  poker/player2_data[3][2]_i_2/O
+                         net (fo=5, routed)           1.055    22.637    poker/player2_data[3][2]_i_2_n_0
+    SLICE_X10Y131        LUT6 (Prop_lut6_I3_O)        0.124    22.761 r  poker/player2_data[3][2]_i_4/O
+                         net (fo=11, routed)          0.703    23.463    poker/player2_data[3][2]_i_4_n_0
+    SLICE_X11Y131        LUT5 (Prop_lut5_I1_O)        0.152    23.615 f  poker/player2_data[2][2]_i_9/O
+                         net (fo=2, routed)           1.006    24.622    poker/player2_data[2][2]_i_9_n_0
+    SLICE_X8Y131         LUT6 (Prop_lut6_I0_O)        0.326    24.948 r  poker/player2_data[1][3]_i_2/O
+                         net (fo=1, routed)           0.504    25.451    poker/player2_data[1][3]_i_2_n_0
+    SLICE_X9Y131         LUT6 (Prop_lut6_I2_O)        0.124    25.575 r  poker/player2_data[1][3]_i_1/O
+                         net (fo=1, routed)           0.000    25.575    poker/player2_data[1][3]_i_1_n_0
+    SLICE_X9Y131         FDCE                                         r  poker/player2_data_reg[1][3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   50.000    50.000 r  
+    E3                                                0.000    50.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    50.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    51.411 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           1.920    53.331    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    53.422 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.498    54.920    poker/board_clk
+    SLICE_X9Y131         FDCE                                         r  poker/player2_data_reg[1][3]/C
+                         clock pessimism              0.277    55.197    
+                         clock uncertainty           -0.035    55.162    
+    SLICE_X9Y131         FDCE (Setup_fdce_C_D)        0.029    55.191    poker/player2_data_reg[1][3]
+  -------------------------------------------------------------------
+                         required time                         55.191    
+                         arrival time                         -25.575    
+  -------------------------------------------------------------------
+                         slack                                 29.616    
+
+Slack (MET) :             29.687ns  (required time - arrival time)
+  Source:                 poker/player1_data_reg[2][2]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            poker/player1_data_reg[2][1]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (ClkPort rise@50.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        20.236ns  (logic 4.247ns (20.987%)  route 15.989ns (79.013%))
+  Logic Levels:           19  (LUT2=1 LUT4=4 LUT5=2 LUT6=12)
+  Clock Path Skew:        -0.121ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.926ns = ( 54.926 - 50.000 ) 
+    Source Clock Delay      (SCD):    5.306ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           2.025     3.506    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.704     5.306    poker/board_clk
+    SLICE_X6Y137         FDCE                                         r  poker/player1_data_reg[2][2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y137         FDCE (Prop_fdce_C_Q)         0.518     5.824 f  poker/player1_data_reg[2][2]/Q
+                         net (fo=16, routed)          2.130     7.954    poker/player1_data_reg[2]_13[2]
+    SLICE_X14Y140        LUT6 (Prop_lut6_I0_O)        0.124     8.078 f  poker/player1_data[6][2]_i_24/O
+                         net (fo=9, routed)           0.610     8.689    poker/player1_data[6][2]_i_24_n_0
+    SLICE_X13Y139        LUT5 (Prop_lut5_I2_O)        0.119     8.808 f  poker/player1_data[6][2]_i_14/O
+                         net (fo=12, routed)          0.958     9.766    poker/player1_data[6][2]_i_14_n_0
+    SLICE_X14Y138        LUT6 (Prop_lut6_I3_O)        0.332    10.098 r  poker/player1_data[6][2]_i_37/O
+                         net (fo=2, routed)           0.822    10.920    poker/player1_data[6][2]_i_37_n_0
+    SLICE_X14Y139        LUT6 (Prop_lut6_I3_O)        0.124    11.044 r  poker/player1_data[6][2]_i_28/O
+                         net (fo=1, routed)           0.701    11.745    poker/player1_data[6][2]_i_28_n_0
+    SLICE_X15Y139        LUT6 (Prop_lut6_I0_O)        0.124    11.869 r  poker/player1_data[6][2]_i_16/O
+                         net (fo=16, routed)          0.909    12.778    poker/player1_data[6][2]_i_16_n_0
+    SLICE_X10Y139        LUT5 (Prop_lut5_I1_O)        0.124    12.902 f  poker/player1_data[5][1]_i_12/O
+                         net (fo=6, routed)           1.348    14.250    poker/player1_data[5][1]_i_12_n_0
+    SLICE_X8Y141         LUT4 (Prop_lut4_I2_O)        0.152    14.402 r  poker/player1_data[5][2]_i_23/O
+                         net (fo=2, routed)           0.519    14.920    poker/player1_data[5][2]_i_23_n_0
+    SLICE_X9Y141         LUT6 (Prop_lut6_I4_O)        0.348    15.268 r  poker/player1_data[5][1]_i_5/O
+                         net (fo=6, routed)           1.084    16.352    poker/player1_data[5][1]_i_5_n_0
+    SLICE_X7Y140         LUT2 (Prop_lut2_I0_O)        0.152    16.504 r  poker/player1_data[5][2]_i_11/O
+                         net (fo=1, routed)           0.479    16.983    poker/player1_data[5][2]_i_11_n_0
+    SLICE_X6Y140         LUT6 (Prop_lut6_I2_O)        0.326    17.309 r  poker/player1_data[5][2]_i_5/O
+                         net (fo=13, routed)          0.933    18.242    poker/player1_data[5][2]_i_5_n_0
+    SLICE_X5Y139         LUT4 (Prop_lut4_I2_O)        0.150    18.392 r  poker/player1_data[4][1]_i_6/O
+                         net (fo=2, routed)           0.817    19.209    poker/player1_data[4][1]_i_6_n_0
+    SLICE_X4Y140         LUT6 (Prop_lut6_I2_O)        0.326    19.535 r  poker/player1_data[4][1]_i_3/O
+                         net (fo=8, routed)           1.014    20.550    poker/player1_data[4][1]_i_3_n_0
+    SLICE_X4Y138         LUT4 (Prop_lut4_I0_O)        0.152    20.702 r  poker/player1_data[4][2]_i_17/O
+                         net (fo=1, routed)           0.495    21.197    poker/player1_data[4][2]_i_17_n_0
+    SLICE_X4Y139         LUT6 (Prop_lut6_I3_O)        0.326    21.523 r  poker/player1_data[4][2]_i_6/O
+                         net (fo=7, routed)           0.847    22.370    poker/player1_data[4][2]_i_6_n_0
+    SLICE_X4Y137         LUT4 (Prop_lut4_I2_O)        0.152    22.522 r  poker/player1_data[3][2]_i_8/O
+                         net (fo=1, routed)           0.436    22.958    poker/player1_data[3][2]_i_8_n_0
+    SLICE_X4Y137         LUT6 (Prop_lut6_I5_O)        0.326    23.284 r  poker/player1_data[3][2]_i_4/O
+                         net (fo=8, routed)           0.603    23.887    poker/player1_data[3][2]_i_4_n_0
+    SLICE_X5Y137         LUT6 (Prop_lut6_I4_O)        0.124    24.011 r  poker/player1_data[2][2]_i_5/O
+                         net (fo=1, routed)           0.562    24.573    poker/player1_data[2][2]_i_5_n_0
+    SLICE_X7Y137         LUT6 (Prop_lut6_I0_O)        0.124    24.697 r  poker/player1_data[2][2]_i_3/O
+                         net (fo=6, routed)           0.721    25.418    poker/player1_data[2][2]_i_3_n_0
+    SLICE_X8Y137         LUT6 (Prop_lut6_I2_O)        0.124    25.542 r  poker/player1_data[2][1]_i_1/O
+                         net (fo=1, routed)           0.000    25.542    poker/player1_data[2][1]_i_1_n_0
+    SLICE_X8Y137         FDCE                                         r  poker/player1_data_reg[2][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   50.000    50.000 r  
+    E3                                                0.000    50.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    50.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    51.411 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           1.920    53.331    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    53.422 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.504    54.926    poker/board_clk
+    SLICE_X8Y137         FDCE                                         r  poker/player1_data_reg[2][1]/C
+                         clock pessimism              0.259    55.185    
+                         clock uncertainty           -0.035    55.150    
+    SLICE_X8Y137         FDCE (Setup_fdce_C_D)        0.079    55.229    poker/player1_data_reg[2][1]
+  -------------------------------------------------------------------
+                         required time                         55.229    
+                         arrival time                         -25.542    
+  -------------------------------------------------------------------
+                         slack                                 29.687    
+
+Slack (MET) :             29.784ns  (required time - arrival time)
+  Source:                 poker/player1_data_reg[2][2]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            poker/player1_data_reg[2][0]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (ClkPort rise@50.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        20.141ns  (logic 4.353ns (21.613%)  route 15.788ns (78.387%))
+  Logic Levels:           18  (LUT2=1 LUT4=4 LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.121ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.926ns = ( 54.926 - 50.000 ) 
+    Source Clock Delay      (SCD):    5.306ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           2.025     3.506    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.704     5.306    poker/board_clk
+    SLICE_X6Y137         FDCE                                         r  poker/player1_data_reg[2][2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y137         FDCE (Prop_fdce_C_Q)         0.518     5.824 f  poker/player1_data_reg[2][2]/Q
+                         net (fo=16, routed)          2.130     7.954    poker/player1_data_reg[2]_13[2]
+    SLICE_X14Y140        LUT6 (Prop_lut6_I0_O)        0.124     8.078 f  poker/player1_data[6][2]_i_24/O
+                         net (fo=9, routed)           0.610     8.689    poker/player1_data[6][2]_i_24_n_0
+    SLICE_X13Y139        LUT5 (Prop_lut5_I2_O)        0.119     8.808 f  poker/player1_data[6][2]_i_14/O
+                         net (fo=12, routed)          0.958     9.766    poker/player1_data[6][2]_i_14_n_0
+    SLICE_X14Y138        LUT6 (Prop_lut6_I3_O)        0.332    10.098 r  poker/player1_data[6][2]_i_37/O
+                         net (fo=2, routed)           0.822    10.920    poker/player1_data[6][2]_i_37_n_0
+    SLICE_X14Y139        LUT6 (Prop_lut6_I3_O)        0.124    11.044 r  poker/player1_data[6][2]_i_28/O
+                         net (fo=1, routed)           0.701    11.745    poker/player1_data[6][2]_i_28_n_0
+    SLICE_X15Y139        LUT6 (Prop_lut6_I0_O)        0.124    11.869 r  poker/player1_data[6][2]_i_16/O
+                         net (fo=16, routed)          0.909    12.778    poker/player1_data[6][2]_i_16_n_0
+    SLICE_X10Y139        LUT5 (Prop_lut5_I1_O)        0.124    12.902 f  poker/player1_data[5][1]_i_12/O
+                         net (fo=6, routed)           1.348    14.250    poker/player1_data[5][1]_i_12_n_0
+    SLICE_X8Y141         LUT4 (Prop_lut4_I2_O)        0.152    14.402 r  poker/player1_data[5][2]_i_23/O
+                         net (fo=2, routed)           0.519    14.920    poker/player1_data[5][2]_i_23_n_0
+    SLICE_X9Y141         LUT6 (Prop_lut6_I4_O)        0.348    15.268 r  poker/player1_data[5][1]_i_5/O
+                         net (fo=6, routed)           1.084    16.352    poker/player1_data[5][1]_i_5_n_0
+    SLICE_X7Y140         LUT2 (Prop_lut2_I0_O)        0.152    16.504 r  poker/player1_data[5][2]_i_11/O
+                         net (fo=1, routed)           0.479    16.983    poker/player1_data[5][2]_i_11_n_0
+    SLICE_X6Y140         LUT6 (Prop_lut6_I2_O)        0.326    17.309 r  poker/player1_data[5][2]_i_5/O
+                         net (fo=13, routed)          0.933    18.242    poker/player1_data[5][2]_i_5_n_0
+    SLICE_X5Y139         LUT4 (Prop_lut4_I2_O)        0.150    18.392 r  poker/player1_data[4][1]_i_6/O
+                         net (fo=2, routed)           0.817    19.209    poker/player1_data[4][1]_i_6_n_0
+    SLICE_X4Y140         LUT6 (Prop_lut6_I2_O)        0.326    19.535 r  poker/player1_data[4][1]_i_3/O
+                         net (fo=8, routed)           1.014    20.550    poker/player1_data[4][1]_i_3_n_0
+    SLICE_X4Y138         LUT4 (Prop_lut4_I0_O)        0.152    20.702 r  poker/player1_data[4][2]_i_17/O
+                         net (fo=1, routed)           0.495    21.197    poker/player1_data[4][2]_i_17_n_0
+    SLICE_X4Y139         LUT6 (Prop_lut6_I3_O)        0.326    21.523 r  poker/player1_data[4][2]_i_6/O
+                         net (fo=7, routed)           0.847    22.370    poker/player1_data[4][2]_i_6_n_0
+    SLICE_X4Y137         LUT4 (Prop_lut4_I2_O)        0.152    22.522 r  poker/player1_data[3][2]_i_8/O
+                         net (fo=1, routed)           0.436    22.958    poker/player1_data[3][2]_i_8_n_0
+    SLICE_X4Y137         LUT6 (Prop_lut6_I5_O)        0.326    23.284 r  poker/player1_data[3][2]_i_4/O
+                         net (fo=8, routed)           1.020    24.304    poker/player1_data[3][2]_i_4_n_0
+    SLICE_X7Y137         LUT5 (Prop_lut5_I3_O)        0.152    24.456 r  poker/player1_data[2][0]_i_3/O
+                         net (fo=2, routed)           0.665    25.121    poker/player1_data[2][0]_i_3_n_0
+    SLICE_X8Y137         LUT6 (Prop_lut6_I1_O)        0.326    25.447 r  poker/player1_data[2][0]_i_1/O
+                         net (fo=1, routed)           0.000    25.447    poker/player1_data[2][0]_i_1_n_0
+    SLICE_X8Y137         FDCE                                         r  poker/player1_data_reg[2][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   50.000    50.000 r  
+    E3                                                0.000    50.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    50.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    51.411 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           1.920    53.331    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    53.422 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.504    54.926    poker/board_clk
+    SLICE_X8Y137         FDCE                                         r  poker/player1_data_reg[2][0]/C
+                         clock pessimism              0.259    55.185    
+                         clock uncertainty           -0.035    55.150    
+    SLICE_X8Y137         FDCE (Setup_fdce_C_D)        0.081    55.231    poker/player1_data_reg[2][0]
+  -------------------------------------------------------------------
+                         required time                         55.231    
+                         arrival time                         -25.447    
+  -------------------------------------------------------------------
+                         slack                                 29.784    
+
+Slack (MET) :             29.809ns  (required time - arrival time)
+  Source:                 poker/player2_data_reg[2][1]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            poker/player2_data_reg[1][1]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (ClkPort rise@50.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        20.206ns  (logic 3.562ns (17.628%)  route 16.644ns (82.372%))
+  Logic Levels:           19  (LUT4=2 LUT5=3 LUT6=14)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.920ns = ( 54.920 - 50.000 ) 
+    Source Clock Delay      (SCD):    5.223ns
+    Clock Pessimism Removal (CPR):    0.277ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           2.025     3.506    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.621     5.223    poker/board_clk
+    SLICE_X8Y132         FDCE                                         r  poker/player2_data_reg[2][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y132         FDCE (Prop_fdce_C_Q)         0.518     5.741 f  poker/player2_data_reg[2][1]/Q
+                         net (fo=17, routed)          1.566     7.308    poker/player2_data_reg[2]_20[1]
+    SLICE_X10Y124        LUT6 (Prop_lut6_I2_O)        0.124     7.432 f  poker/player2_data[6][2]_i_34/O
+                         net (fo=11, routed)          0.702     8.134    poker/player2_data[6][2]_i_34_n_0
+    SLICE_X14Y125        LUT6 (Prop_lut6_I3_O)        0.124     8.258 r  poker/player2_data[6][2]_i_44/O
+                         net (fo=2, routed)           1.407     9.665    poker/player2_data[6][2]_i_44_n_0
+    SLICE_X11Y125        LUT6 (Prop_lut6_I2_O)        0.124     9.789 r  poker/player2_data[6][2]_i_38/O
+                         net (fo=2, routed)           1.341    11.130    poker/player2_data[6][2]_i_38_n_0
+    SLICE_X14Y123        LUT6 (Prop_lut6_I2_O)        0.124    11.254 r  poker/player2_data[4][2]_i_49/O
+                         net (fo=1, routed)           0.162    11.416    poker/player2_data[4][2]_i_49_n_0
+    SLICE_X14Y123        LUT6 (Prop_lut6_I0_O)        0.124    11.540 r  poker/player2_data[4][2]_i_29/O
+                         net (fo=12, routed)          0.486    12.026    poker/player2_data[4][2]_i_29_n_0
+    SLICE_X15Y123        LUT6 (Prop_lut6_I1_O)        0.124    12.150 r  poker/player2_data[4][2]_i_66/O
+                         net (fo=2, routed)           1.267    13.417    poker/player2_data[4][2]_i_66_n_0
+    SLICE_X15Y127        LUT6 (Prop_lut6_I1_O)        0.124    13.541 r  poker/player2_data[4][2]_i_57/O
+                         net (fo=4, routed)           0.872    14.413    poker/player2_data[4][2]_i_57_n_0
+    SLICE_X14Y127        LUT6 (Prop_lut6_I3_O)        0.124    14.537 f  poker/player2_data[4][2]_i_35/O
+                         net (fo=1, routed)           0.663    15.201    poker/player2_data[4][2]_i_35_n_0
+    SLICE_X14Y127        LUT6 (Prop_lut6_I4_O)        0.124    15.325 r  poker/player2_data[4][2]_i_12/O
+                         net (fo=8, routed)           1.048    16.373    poker/player2_data[4][2]_i_12_n_0
+    SLICE_X14Y128        LUT5 (Prop_lut5_I1_O)        0.150    16.523 r  poker/player2_data[4][2]_i_3/O
+                         net (fo=8, routed)           1.142    17.665    poker/player2_data[4][2]_i_3_n_0
+    SLICE_X14Y131        LUT4 (Prop_lut4_I0_O)        0.354    18.019 r  poker/player2_data[4][2]_i_21/O
+                         net (fo=1, routed)           0.652    18.670    poker/player2_data[4][2]_i_21_n_0
+    SLICE_X15Y131        LUT6 (Prop_lut6_I5_O)        0.328    18.998 r  poker/player2_data[4][2]_i_4/O
+                         net (fo=12, routed)          0.733    19.731    poker/player2_data[4][2]_i_4_n_0
+    SLICE_X12Y132        LUT5 (Prop_lut5_I3_O)        0.148    19.879 f  poker/player2_data[4][0]_i_3/O
+                         net (fo=5, routed)           0.859    20.738    poker/player2_data[4][0]_i_3_n_0
+    SLICE_X11Y132        LUT6 (Prop_lut6_I1_O)        0.328    21.066 r  poker/player2_data[4][2]_i_6/O
+                         net (fo=11, routed)          0.391    21.457    poker/player2_data[4][2]_i_6_n_0
+    SLICE_X12Y132        LUT5 (Prop_lut5_I3_O)        0.124    21.581 f  poker/player2_data[3][2]_i_2/O
+                         net (fo=5, routed)           1.055    22.637    poker/player2_data[3][2]_i_2_n_0
+    SLICE_X10Y131        LUT6 (Prop_lut6_I3_O)        0.124    22.761 r  poker/player2_data[3][2]_i_4/O
+                         net (fo=11, routed)          0.748    23.508    poker/player2_data[3][2]_i_4_n_0
+    SLICE_X11Y131        LUT4 (Prop_lut4_I2_O)        0.124    23.632 f  poker/player2_data[2][2]_i_7/O
+                         net (fo=2, routed)           0.830    24.463    poker/player2_data[2][2]_i_7_n_0
+    SLICE_X8Y131         LUT6 (Prop_lut6_I2_O)        0.124    24.587 r  poker/player2_data[2][2]_i_3/O
+                         net (fo=6, routed)           0.719    25.306    poker/player2_data[2][2]_i_3_n_0
+    SLICE_X8Y131         LUT6 (Prop_lut6_I2_O)        0.124    25.430 r  poker/player2_data[1][1]_i_1/O
+                         net (fo=1, routed)           0.000    25.430    poker/player2_data[1][1]_i_1_n_0
+    SLICE_X8Y131         FDCE                                         r  poker/player2_data_reg[1][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   50.000    50.000 r  
+    E3                                                0.000    50.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    50.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    51.411 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           1.920    53.331    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    53.422 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.498    54.920    poker/board_clk
+    SLICE_X8Y131         FDCE                                         r  poker/player2_data_reg[1][1]/C
+                         clock pessimism              0.277    55.197    
+                         clock uncertainty           -0.035    55.162    
+    SLICE_X8Y131         FDCE (Setup_fdce_C_D)        0.077    55.239    poker/player2_data_reg[1][1]
+  -------------------------------------------------------------------
+                         required time                         55.239    
+                         arrival time                         -25.430    
+  -------------------------------------------------------------------
+                         slack                                 29.809    
+
+Slack (MET) :             29.969ns  (required time - arrival time)
+  Source:                 poker/player1_data_reg[2][2]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            poker/player1_data_reg[1][1]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (ClkPort rise@50.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        19.952ns  (logic 4.247ns (21.286%)  route 15.705ns (78.714%))
+  Logic Levels:           19  (LUT2=1 LUT4=4 LUT5=2 LUT6=12)
+  Clock Path Skew:        -0.121ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.926ns = ( 54.926 - 50.000 ) 
+    Source Clock Delay      (SCD):    5.306ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           2.025     3.506    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.704     5.306    poker/board_clk
+    SLICE_X6Y137         FDCE                                         r  poker/player1_data_reg[2][2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y137         FDCE (Prop_fdce_C_Q)         0.518     5.824 f  poker/player1_data_reg[2][2]/Q
+                         net (fo=16, routed)          2.130     7.954    poker/player1_data_reg[2]_13[2]
+    SLICE_X14Y140        LUT6 (Prop_lut6_I0_O)        0.124     8.078 f  poker/player1_data[6][2]_i_24/O
+                         net (fo=9, routed)           0.610     8.689    poker/player1_data[6][2]_i_24_n_0
+    SLICE_X13Y139        LUT5 (Prop_lut5_I2_O)        0.119     8.808 f  poker/player1_data[6][2]_i_14/O
+                         net (fo=12, routed)          0.958     9.766    poker/player1_data[6][2]_i_14_n_0
+    SLICE_X14Y138        LUT6 (Prop_lut6_I3_O)        0.332    10.098 r  poker/player1_data[6][2]_i_37/O
+                         net (fo=2, routed)           0.822    10.920    poker/player1_data[6][2]_i_37_n_0
+    SLICE_X14Y139        LUT6 (Prop_lut6_I3_O)        0.124    11.044 r  poker/player1_data[6][2]_i_28/O
+                         net (fo=1, routed)           0.701    11.745    poker/player1_data[6][2]_i_28_n_0
+    SLICE_X15Y139        LUT6 (Prop_lut6_I0_O)        0.124    11.869 r  poker/player1_data[6][2]_i_16/O
+                         net (fo=16, routed)          0.909    12.778    poker/player1_data[6][2]_i_16_n_0
+    SLICE_X10Y139        LUT5 (Prop_lut5_I1_O)        0.124    12.902 f  poker/player1_data[5][1]_i_12/O
+                         net (fo=6, routed)           1.348    14.250    poker/player1_data[5][1]_i_12_n_0
+    SLICE_X8Y141         LUT4 (Prop_lut4_I2_O)        0.152    14.402 r  poker/player1_data[5][2]_i_23/O
+                         net (fo=2, routed)           0.519    14.920    poker/player1_data[5][2]_i_23_n_0
+    SLICE_X9Y141         LUT6 (Prop_lut6_I4_O)        0.348    15.268 r  poker/player1_data[5][1]_i_5/O
+                         net (fo=6, routed)           1.084    16.352    poker/player1_data[5][1]_i_5_n_0
+    SLICE_X7Y140         LUT2 (Prop_lut2_I0_O)        0.152    16.504 r  poker/player1_data[5][2]_i_11/O
+                         net (fo=1, routed)           0.479    16.983    poker/player1_data[5][2]_i_11_n_0
+    SLICE_X6Y140         LUT6 (Prop_lut6_I2_O)        0.326    17.309 r  poker/player1_data[5][2]_i_5/O
+                         net (fo=13, routed)          0.933    18.242    poker/player1_data[5][2]_i_5_n_0
+    SLICE_X5Y139         LUT4 (Prop_lut4_I2_O)        0.150    18.392 r  poker/player1_data[4][1]_i_6/O
+                         net (fo=2, routed)           0.817    19.209    poker/player1_data[4][1]_i_6_n_0
+    SLICE_X4Y140         LUT6 (Prop_lut6_I2_O)        0.326    19.535 r  poker/player1_data[4][1]_i_3/O
+                         net (fo=8, routed)           1.014    20.550    poker/player1_data[4][1]_i_3_n_0
+    SLICE_X4Y138         LUT4 (Prop_lut4_I0_O)        0.152    20.702 r  poker/player1_data[4][2]_i_17/O
+                         net (fo=1, routed)           0.495    21.197    poker/player1_data[4][2]_i_17_n_0
+    SLICE_X4Y139         LUT6 (Prop_lut6_I3_O)        0.326    21.523 r  poker/player1_data[4][2]_i_6/O
+                         net (fo=7, routed)           0.847    22.370    poker/player1_data[4][2]_i_6_n_0
+    SLICE_X4Y137         LUT4 (Prop_lut4_I2_O)        0.152    22.522 r  poker/player1_data[3][2]_i_8/O
+                         net (fo=1, routed)           0.436    22.958    poker/player1_data[3][2]_i_8_n_0
+    SLICE_X4Y137         LUT6 (Prop_lut6_I5_O)        0.326    23.284 r  poker/player1_data[3][2]_i_4/O
+                         net (fo=8, routed)           0.603    23.887    poker/player1_data[3][2]_i_4_n_0
+    SLICE_X5Y137         LUT6 (Prop_lut6_I4_O)        0.124    24.011 r  poker/player1_data[2][2]_i_5/O
+                         net (fo=1, routed)           0.562    24.573    poker/player1_data[2][2]_i_5_n_0
+    SLICE_X7Y137         LUT6 (Prop_lut6_I0_O)        0.124    24.697 r  poker/player1_data[2][2]_i_3/O
+                         net (fo=6, routed)           0.437    25.134    poker/player1_data[2][2]_i_3_n_0
+    SLICE_X8Y137         LUT6 (Prop_lut6_I2_O)        0.124    25.258 r  poker/player1_data[1][1]_i_1/O
+                         net (fo=1, routed)           0.000    25.258    poker/player1_data[1][1]_i_1_n_0
+    SLICE_X8Y137         FDCE                                         r  poker/player1_data_reg[1][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   50.000    50.000 r  
+    E3                                                0.000    50.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    50.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    51.411 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           1.920    53.331    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    53.422 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.504    54.926    poker/board_clk
+    SLICE_X8Y137         FDCE                                         r  poker/player1_data_reg[1][1]/C
+                         clock pessimism              0.259    55.185    
+                         clock uncertainty           -0.035    55.150    
+    SLICE_X8Y137         FDCE (Setup_fdce_C_D)        0.077    55.227    poker/player1_data_reg[1][1]
+  -------------------------------------------------------------------
+                         required time                         55.227    
+                         arrival time                         -25.258    
+  -------------------------------------------------------------------
+                         slack                                 29.969    
+
+Slack (MET) :             29.986ns  (required time - arrival time)
+  Source:                 poker/player2_data_reg[2][1]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            poker/player2_data_reg[2][0]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (ClkPort rise@50.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        19.986ns  (logic 3.562ns (17.823%)  route 16.424ns (82.177%))
+  Logic Levels:           19  (LUT4=2 LUT5=3 LUT6=14)
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.922ns = ( 54.922 - 50.000 ) 
+    Source Clock Delay      (SCD):    5.223ns
+    Clock Pessimism Removal (CPR):    0.279ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           2.025     3.506    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.621     5.223    poker/board_clk
+    SLICE_X8Y132         FDCE                                         r  poker/player2_data_reg[2][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y132         FDCE (Prop_fdce_C_Q)         0.518     5.741 f  poker/player2_data_reg[2][1]/Q
+                         net (fo=17, routed)          1.566     7.308    poker/player2_data_reg[2]_20[1]
+    SLICE_X10Y124        LUT6 (Prop_lut6_I2_O)        0.124     7.432 f  poker/player2_data[6][2]_i_34/O
+                         net (fo=11, routed)          0.702     8.134    poker/player2_data[6][2]_i_34_n_0
+    SLICE_X14Y125        LUT6 (Prop_lut6_I3_O)        0.124     8.258 r  poker/player2_data[6][2]_i_44/O
+                         net (fo=2, routed)           1.407     9.665    poker/player2_data[6][2]_i_44_n_0
+    SLICE_X11Y125        LUT6 (Prop_lut6_I2_O)        0.124     9.789 r  poker/player2_data[6][2]_i_38/O
+                         net (fo=2, routed)           1.341    11.130    poker/player2_data[6][2]_i_38_n_0
+    SLICE_X14Y123        LUT6 (Prop_lut6_I2_O)        0.124    11.254 r  poker/player2_data[4][2]_i_49/O
+                         net (fo=1, routed)           0.162    11.416    poker/player2_data[4][2]_i_49_n_0
+    SLICE_X14Y123        LUT6 (Prop_lut6_I0_O)        0.124    11.540 r  poker/player2_data[4][2]_i_29/O
+                         net (fo=12, routed)          0.486    12.026    poker/player2_data[4][2]_i_29_n_0
+    SLICE_X15Y123        LUT6 (Prop_lut6_I1_O)        0.124    12.150 r  poker/player2_data[4][2]_i_66/O
+                         net (fo=2, routed)           1.267    13.417    poker/player2_data[4][2]_i_66_n_0
+    SLICE_X15Y127        LUT6 (Prop_lut6_I1_O)        0.124    13.541 r  poker/player2_data[4][2]_i_57/O
+                         net (fo=4, routed)           0.872    14.413    poker/player2_data[4][2]_i_57_n_0
+    SLICE_X14Y127        LUT6 (Prop_lut6_I3_O)        0.124    14.537 f  poker/player2_data[4][2]_i_35/O
+                         net (fo=1, routed)           0.663    15.201    poker/player2_data[4][2]_i_35_n_0
+    SLICE_X14Y127        LUT6 (Prop_lut6_I4_O)        0.124    15.325 r  poker/player2_data[4][2]_i_12/O
+                         net (fo=8, routed)           1.048    16.373    poker/player2_data[4][2]_i_12_n_0
+    SLICE_X14Y128        LUT5 (Prop_lut5_I1_O)        0.150    16.523 r  poker/player2_data[4][2]_i_3/O
+                         net (fo=8, routed)           1.142    17.665    poker/player2_data[4][2]_i_3_n_0
+    SLICE_X14Y131        LUT4 (Prop_lut4_I0_O)        0.354    18.019 r  poker/player2_data[4][2]_i_21/O
+                         net (fo=1, routed)           0.652    18.670    poker/player2_data[4][2]_i_21_n_0
+    SLICE_X15Y131        LUT6 (Prop_lut6_I5_O)        0.328    18.998 r  poker/player2_data[4][2]_i_4/O
+                         net (fo=12, routed)          0.733    19.731    poker/player2_data[4][2]_i_4_n_0
+    SLICE_X12Y132        LUT5 (Prop_lut5_I3_O)        0.148    19.879 f  poker/player2_data[4][0]_i_3/O
+                         net (fo=5, routed)           0.859    20.738    poker/player2_data[4][0]_i_3_n_0
+    SLICE_X11Y132        LUT6 (Prop_lut6_I1_O)        0.328    21.066 r  poker/player2_data[4][2]_i_6/O
+                         net (fo=11, routed)          0.391    21.457    poker/player2_data[4][2]_i_6_n_0
+    SLICE_X12Y132        LUT5 (Prop_lut5_I3_O)        0.124    21.581 f  poker/player2_data[3][2]_i_2/O
+                         net (fo=5, routed)           1.055    22.637    poker/player2_data[3][2]_i_2_n_0
+    SLICE_X10Y131        LUT6 (Prop_lut6_I3_O)        0.124    22.761 r  poker/player2_data[3][2]_i_4/O
+                         net (fo=11, routed)          0.748    23.508    poker/player2_data[3][2]_i_4_n_0
+    SLICE_X11Y131        LUT4 (Prop_lut4_I2_O)        0.124    23.632 f  poker/player2_data[2][2]_i_7/O
+                         net (fo=2, routed)           0.830    24.463    poker/player2_data[2][2]_i_7_n_0
+    SLICE_X8Y131         LUT6 (Prop_lut6_I2_O)        0.124    24.587 r  poker/player2_data[2][2]_i_3/O
+                         net (fo=6, routed)           0.498    25.085    poker/player2_data[2][2]_i_3_n_0
+    SLICE_X9Y132         LUT6 (Prop_lut6_I3_O)        0.124    25.209 r  poker/player2_data[2][0]_i_1/O
+                         net (fo=1, routed)           0.000    25.209    poker/player2_data[2][0]_i_1_n_0
+    SLICE_X9Y132         FDCE                                         r  poker/player2_data_reg[2][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   50.000    50.000 r  
+    E3                                                0.000    50.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    50.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    51.411 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           1.920    53.331    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    53.422 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.500    54.922    poker/board_clk
+    SLICE_X9Y132         FDCE                                         r  poker/player2_data_reg[2][0]/C
+                         clock pessimism              0.279    55.201    
+                         clock uncertainty           -0.035    55.166    
+    SLICE_X9Y132         FDCE (Setup_fdce_C_D)        0.029    55.195    poker/player2_data_reg[2][0]
+  -------------------------------------------------------------------
+                         required time                         55.195    
+                         arrival time                         -25.209    
+  -------------------------------------------------------------------
+                         slack                                 29.986    
+
+Slack (MET) :             30.019ns  (required time - arrival time)
+  Source:                 poker/player2_data_reg[2][1]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            poker/player2_data_reg[2][2]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (ClkPort rise@50.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        19.950ns  (logic 3.562ns (17.854%)  route 16.388ns (82.146%))
+  Logic Levels:           19  (LUT4=2 LUT5=3 LUT6=14)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.920ns = ( 54.920 - 50.000 ) 
+    Source Clock Delay      (SCD):    5.223ns
+    Clock Pessimism Removal (CPR):    0.277ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           2.025     3.506    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.621     5.223    poker/board_clk
+    SLICE_X8Y132         FDCE                                         r  poker/player2_data_reg[2][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y132         FDCE (Prop_fdce_C_Q)         0.518     5.741 f  poker/player2_data_reg[2][1]/Q
+                         net (fo=17, routed)          1.566     7.308    poker/player2_data_reg[2]_20[1]
+    SLICE_X10Y124        LUT6 (Prop_lut6_I2_O)        0.124     7.432 f  poker/player2_data[6][2]_i_34/O
+                         net (fo=11, routed)          0.702     8.134    poker/player2_data[6][2]_i_34_n_0
+    SLICE_X14Y125        LUT6 (Prop_lut6_I3_O)        0.124     8.258 r  poker/player2_data[6][2]_i_44/O
+                         net (fo=2, routed)           1.407     9.665    poker/player2_data[6][2]_i_44_n_0
+    SLICE_X11Y125        LUT6 (Prop_lut6_I2_O)        0.124     9.789 r  poker/player2_data[6][2]_i_38/O
+                         net (fo=2, routed)           1.341    11.130    poker/player2_data[6][2]_i_38_n_0
+    SLICE_X14Y123        LUT6 (Prop_lut6_I2_O)        0.124    11.254 r  poker/player2_data[4][2]_i_49/O
+                         net (fo=1, routed)           0.162    11.416    poker/player2_data[4][2]_i_49_n_0
+    SLICE_X14Y123        LUT6 (Prop_lut6_I0_O)        0.124    11.540 r  poker/player2_data[4][2]_i_29/O
+                         net (fo=12, routed)          0.486    12.026    poker/player2_data[4][2]_i_29_n_0
+    SLICE_X15Y123        LUT6 (Prop_lut6_I1_O)        0.124    12.150 r  poker/player2_data[4][2]_i_66/O
+                         net (fo=2, routed)           1.267    13.417    poker/player2_data[4][2]_i_66_n_0
+    SLICE_X15Y127        LUT6 (Prop_lut6_I1_O)        0.124    13.541 r  poker/player2_data[4][2]_i_57/O
+                         net (fo=4, routed)           0.872    14.413    poker/player2_data[4][2]_i_57_n_0
+    SLICE_X14Y127        LUT6 (Prop_lut6_I3_O)        0.124    14.537 f  poker/player2_data[4][2]_i_35/O
+                         net (fo=1, routed)           0.663    15.201    poker/player2_data[4][2]_i_35_n_0
+    SLICE_X14Y127        LUT6 (Prop_lut6_I4_O)        0.124    15.325 r  poker/player2_data[4][2]_i_12/O
+                         net (fo=8, routed)           1.048    16.373    poker/player2_data[4][2]_i_12_n_0
+    SLICE_X14Y128        LUT5 (Prop_lut5_I1_O)        0.150    16.523 r  poker/player2_data[4][2]_i_3/O
+                         net (fo=8, routed)           1.142    17.665    poker/player2_data[4][2]_i_3_n_0
+    SLICE_X14Y131        LUT4 (Prop_lut4_I0_O)        0.354    18.019 r  poker/player2_data[4][2]_i_21/O
+                         net (fo=1, routed)           0.652    18.670    poker/player2_data[4][2]_i_21_n_0
+    SLICE_X15Y131        LUT6 (Prop_lut6_I5_O)        0.328    18.998 r  poker/player2_data[4][2]_i_4/O
+                         net (fo=12, routed)          0.733    19.731    poker/player2_data[4][2]_i_4_n_0
+    SLICE_X12Y132        LUT5 (Prop_lut5_I3_O)        0.148    19.879 f  poker/player2_data[4][0]_i_3/O
+                         net (fo=5, routed)           0.859    20.738    poker/player2_data[4][0]_i_3_n_0
+    SLICE_X11Y132        LUT6 (Prop_lut6_I1_O)        0.328    21.066 r  poker/player2_data[4][2]_i_6/O
+                         net (fo=11, routed)          0.391    21.457    poker/player2_data[4][2]_i_6_n_0
+    SLICE_X12Y132        LUT5 (Prop_lut5_I3_O)        0.124    21.581 f  poker/player2_data[3][2]_i_2/O
+                         net (fo=5, routed)           1.055    22.637    poker/player2_data[3][2]_i_2_n_0
+    SLICE_X10Y131        LUT6 (Prop_lut6_I3_O)        0.124    22.761 r  poker/player2_data[3][2]_i_4/O
+                         net (fo=11, routed)          0.748    23.508    poker/player2_data[3][2]_i_4_n_0
+    SLICE_X11Y131        LUT4 (Prop_lut4_I2_O)        0.124    23.632 f  poker/player2_data[2][2]_i_7/O
+                         net (fo=2, routed)           0.830    24.463    poker/player2_data[2][2]_i_7_n_0
+    SLICE_X8Y131         LUT6 (Prop_lut6_I2_O)        0.124    24.587 r  poker/player2_data[2][2]_i_3/O
+                         net (fo=6, routed)           0.463    25.050    poker/player2_data[2][2]_i_3_n_0
+    SLICE_X9Y131         LUT6 (Prop_lut6_I2_O)        0.124    25.174 r  poker/player2_data[2][2]_i_1/O
+                         net (fo=1, routed)           0.000    25.174    poker/player2_data[2][2]_i_1_n_0
+    SLICE_X9Y131         FDCE                                         r  poker/player2_data_reg[2][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   50.000    50.000 r  
+    E3                                                0.000    50.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    50.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    51.411 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           1.920    53.331    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    53.422 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.498    54.920    poker/board_clk
+    SLICE_X9Y131         FDCE                                         r  poker/player2_data_reg[2][2]/C
+                         clock pessimism              0.277    55.197    
+                         clock uncertainty           -0.035    55.162    
+    SLICE_X9Y131         FDCE (Setup_fdce_C_D)        0.031    55.193    poker/player2_data_reg[2][2]
+  -------------------------------------------------------------------
+                         required time                         55.193    
+                         arrival time                         -25.174    
+  -------------------------------------------------------------------
+                         slack                                 30.019    
+
+Slack (MET) :             30.037ns  (required time - arrival time)
+  Source:                 poker/player2_data_reg[2][1]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            poker/player2_data_reg[1][0]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (ClkPort rise@50.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        19.937ns  (logic 3.562ns (17.866%)  route 16.375ns (82.134%))
+  Logic Levels:           19  (LUT4=2 LUT5=3 LUT6=14)
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.922ns = ( 54.922 - 50.000 ) 
+    Source Clock Delay      (SCD):    5.223ns
+    Clock Pessimism Removal (CPR):    0.279ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           2.025     3.506    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.621     5.223    poker/board_clk
+    SLICE_X8Y132         FDCE                                         r  poker/player2_data_reg[2][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y132         FDCE (Prop_fdce_C_Q)         0.518     5.741 f  poker/player2_data_reg[2][1]/Q
+                         net (fo=17, routed)          1.566     7.308    poker/player2_data_reg[2]_20[1]
+    SLICE_X10Y124        LUT6 (Prop_lut6_I2_O)        0.124     7.432 f  poker/player2_data[6][2]_i_34/O
+                         net (fo=11, routed)          0.702     8.134    poker/player2_data[6][2]_i_34_n_0
+    SLICE_X14Y125        LUT6 (Prop_lut6_I3_O)        0.124     8.258 r  poker/player2_data[6][2]_i_44/O
+                         net (fo=2, routed)           1.407     9.665    poker/player2_data[6][2]_i_44_n_0
+    SLICE_X11Y125        LUT6 (Prop_lut6_I2_O)        0.124     9.789 r  poker/player2_data[6][2]_i_38/O
+                         net (fo=2, routed)           1.341    11.130    poker/player2_data[6][2]_i_38_n_0
+    SLICE_X14Y123        LUT6 (Prop_lut6_I2_O)        0.124    11.254 r  poker/player2_data[4][2]_i_49/O
+                         net (fo=1, routed)           0.162    11.416    poker/player2_data[4][2]_i_49_n_0
+    SLICE_X14Y123        LUT6 (Prop_lut6_I0_O)        0.124    11.540 r  poker/player2_data[4][2]_i_29/O
+                         net (fo=12, routed)          0.486    12.026    poker/player2_data[4][2]_i_29_n_0
+    SLICE_X15Y123        LUT6 (Prop_lut6_I1_O)        0.124    12.150 r  poker/player2_data[4][2]_i_66/O
+                         net (fo=2, routed)           1.267    13.417    poker/player2_data[4][2]_i_66_n_0
+    SLICE_X15Y127        LUT6 (Prop_lut6_I1_O)        0.124    13.541 r  poker/player2_data[4][2]_i_57/O
+                         net (fo=4, routed)           0.872    14.413    poker/player2_data[4][2]_i_57_n_0
+    SLICE_X14Y127        LUT6 (Prop_lut6_I3_O)        0.124    14.537 f  poker/player2_data[4][2]_i_35/O
+                         net (fo=1, routed)           0.663    15.201    poker/player2_data[4][2]_i_35_n_0
+    SLICE_X14Y127        LUT6 (Prop_lut6_I4_O)        0.124    15.325 r  poker/player2_data[4][2]_i_12/O
+                         net (fo=8, routed)           1.048    16.373    poker/player2_data[4][2]_i_12_n_0
+    SLICE_X14Y128        LUT5 (Prop_lut5_I1_O)        0.150    16.523 r  poker/player2_data[4][2]_i_3/O
+                         net (fo=8, routed)           1.142    17.665    poker/player2_data[4][2]_i_3_n_0
+    SLICE_X14Y131        LUT4 (Prop_lut4_I0_O)        0.354    18.019 r  poker/player2_data[4][2]_i_21/O
+                         net (fo=1, routed)           0.652    18.670    poker/player2_data[4][2]_i_21_n_0
+    SLICE_X15Y131        LUT6 (Prop_lut6_I5_O)        0.328    18.998 r  poker/player2_data[4][2]_i_4/O
+                         net (fo=12, routed)          0.733    19.731    poker/player2_data[4][2]_i_4_n_0
+    SLICE_X12Y132        LUT5 (Prop_lut5_I3_O)        0.148    19.879 f  poker/player2_data[4][0]_i_3/O
+                         net (fo=5, routed)           0.859    20.738    poker/player2_data[4][0]_i_3_n_0
+    SLICE_X11Y132        LUT6 (Prop_lut6_I1_O)        0.328    21.066 r  poker/player2_data[4][2]_i_6/O
+                         net (fo=11, routed)          0.391    21.457    poker/player2_data[4][2]_i_6_n_0
+    SLICE_X12Y132        LUT5 (Prop_lut5_I3_O)        0.124    21.581 f  poker/player2_data[3][2]_i_2/O
+                         net (fo=5, routed)           1.055    22.637    poker/player2_data[3][2]_i_2_n_0
+    SLICE_X10Y131        LUT6 (Prop_lut6_I3_O)        0.124    22.761 r  poker/player2_data[3][2]_i_4/O
+                         net (fo=11, routed)          0.748    23.508    poker/player2_data[3][2]_i_4_n_0
+    SLICE_X11Y131        LUT4 (Prop_lut4_I2_O)        0.124    23.632 f  poker/player2_data[2][2]_i_7/O
+                         net (fo=2, routed)           0.830    24.463    poker/player2_data[2][2]_i_7_n_0
+    SLICE_X8Y131         LUT6 (Prop_lut6_I2_O)        0.124    24.587 r  poker/player2_data[2][2]_i_3/O
+                         net (fo=6, routed)           0.450    25.037    poker/player2_data[2][2]_i_3_n_0
+    SLICE_X9Y132         LUT6 (Prop_lut6_I3_O)        0.124    25.161 r  poker/player2_data[1][0]_i_1/O
+                         net (fo=1, routed)           0.000    25.161    poker/player2_data[1][0]_i_1_n_0
+    SLICE_X9Y132         FDCE                                         r  poker/player2_data_reg[1][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   50.000    50.000 r  
+    E3                                                0.000    50.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    50.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    51.411 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           1.920    53.331    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    53.422 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.500    54.922    poker/board_clk
+    SLICE_X9Y132         FDCE                                         r  poker/player2_data_reg[1][0]/C
+                         clock pessimism              0.279    55.201    
+                         clock uncertainty           -0.035    55.166    
+    SLICE_X9Y132         FDCE (Setup_fdce_C_D)        0.032    55.198    poker/player2_data_reg[1][0]
+  -------------------------------------------------------------------
+                         required time                         55.198    
+                         arrival time                         -25.161    
+  -------------------------------------------------------------------
+                         slack                                 30.037    
+
+Slack (MET) :             30.061ns  (required time - arrival time)
+  Source:                 poker/player1_data_reg[2][2]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            poker/player1_data_reg[3][0]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (ClkPort rise@50.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        19.858ns  (logic 4.326ns (21.784%)  route 15.532ns (78.216%))
+  Logic Levels:           18  (LUT2=1 LUT4=4 LUT5=4 LUT6=9)
+  Clock Path Skew:        -0.122ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.925ns = ( 54.925 - 50.000 ) 
+    Source Clock Delay      (SCD):    5.306ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           2.025     3.506    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.704     5.306    poker/board_clk
+    SLICE_X6Y137         FDCE                                         r  poker/player1_data_reg[2][2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y137         FDCE (Prop_fdce_C_Q)         0.518     5.824 f  poker/player1_data_reg[2][2]/Q
+                         net (fo=16, routed)          2.130     7.954    poker/player1_data_reg[2]_13[2]
+    SLICE_X14Y140        LUT6 (Prop_lut6_I0_O)        0.124     8.078 f  poker/player1_data[6][2]_i_24/O
+                         net (fo=9, routed)           0.610     8.689    poker/player1_data[6][2]_i_24_n_0
+    SLICE_X13Y139        LUT5 (Prop_lut5_I2_O)        0.119     8.808 f  poker/player1_data[6][2]_i_14/O
+                         net (fo=12, routed)          0.958     9.766    poker/player1_data[6][2]_i_14_n_0
+    SLICE_X14Y138        LUT6 (Prop_lut6_I3_O)        0.332    10.098 r  poker/player1_data[6][2]_i_37/O
+                         net (fo=2, routed)           0.822    10.920    poker/player1_data[6][2]_i_37_n_0
+    SLICE_X14Y139        LUT6 (Prop_lut6_I3_O)        0.124    11.044 r  poker/player1_data[6][2]_i_28/O
+                         net (fo=1, routed)           0.701    11.745    poker/player1_data[6][2]_i_28_n_0
+    SLICE_X15Y139        LUT6 (Prop_lut6_I0_O)        0.124    11.869 r  poker/player1_data[6][2]_i_16/O
+                         net (fo=16, routed)          0.909    12.778    poker/player1_data[6][2]_i_16_n_0
+    SLICE_X10Y139        LUT5 (Prop_lut5_I1_O)        0.124    12.902 f  poker/player1_data[5][1]_i_12/O
+                         net (fo=6, routed)           1.348    14.250    poker/player1_data[5][1]_i_12_n_0
+    SLICE_X8Y141         LUT4 (Prop_lut4_I2_O)        0.152    14.402 r  poker/player1_data[5][2]_i_23/O
+                         net (fo=2, routed)           0.519    14.920    poker/player1_data[5][2]_i_23_n_0
+    SLICE_X9Y141         LUT6 (Prop_lut6_I4_O)        0.348    15.268 r  poker/player1_data[5][1]_i_5/O
+                         net (fo=6, routed)           1.084    16.352    poker/player1_data[5][1]_i_5_n_0
+    SLICE_X7Y140         LUT2 (Prop_lut2_I0_O)        0.152    16.504 r  poker/player1_data[5][2]_i_11/O
+                         net (fo=1, routed)           0.479    16.983    poker/player1_data[5][2]_i_11_n_0
+    SLICE_X6Y140         LUT6 (Prop_lut6_I2_O)        0.326    17.309 r  poker/player1_data[5][2]_i_5/O
+                         net (fo=13, routed)          0.933    18.242    poker/player1_data[5][2]_i_5_n_0
+    SLICE_X5Y139         LUT4 (Prop_lut4_I2_O)        0.150    18.392 r  poker/player1_data[4][1]_i_6/O
+                         net (fo=2, routed)           0.817    19.209    poker/player1_data[4][1]_i_6_n_0
+    SLICE_X4Y140         LUT6 (Prop_lut6_I2_O)        0.326    19.535 r  poker/player1_data[4][1]_i_3/O
+                         net (fo=8, routed)           1.014    20.550    poker/player1_data[4][1]_i_3_n_0
+    SLICE_X4Y138         LUT4 (Prop_lut4_I0_O)        0.152    20.702 r  poker/player1_data[4][2]_i_17/O
+                         net (fo=1, routed)           0.495    21.197    poker/player1_data[4][2]_i_17_n_0
+    SLICE_X4Y139         LUT6 (Prop_lut6_I3_O)        0.326    21.523 r  poker/player1_data[4][2]_i_6/O
+                         net (fo=7, routed)           0.847    22.370    poker/player1_data[4][2]_i_6_n_0
+    SLICE_X4Y137         LUT4 (Prop_lut4_I2_O)        0.152    22.522 r  poker/player1_data[3][2]_i_8/O
+                         net (fo=1, routed)           0.436    22.958    poker/player1_data[3][2]_i_8_n_0
+    SLICE_X4Y137         LUT6 (Prop_lut6_I5_O)        0.326    23.284 r  poker/player1_data[3][2]_i_4/O
+                         net (fo=8, routed)           0.629    23.913    poker/player1_data[3][2]_i_4_n_0
+    SLICE_X7Y137         LUT5 (Prop_lut5_I1_O)        0.119    24.032 r  poker/player1_data[3][0]_i_2/O
+                         net (fo=1, routed)           0.800    24.832    poker/player1_data[3][0]_i_2_n_0
+    SLICE_X8Y136         LUT5 (Prop_lut5_I4_O)        0.332    25.164 r  poker/player1_data[3][0]_i_1/O
+                         net (fo=1, routed)           0.000    25.164    poker/player1_data[3][0]_i_1_n_0
+    SLICE_X8Y136         FDCE                                         r  poker/player1_data_reg[3][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   50.000    50.000 r  
+    E3                                                0.000    50.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    50.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    51.411 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           1.920    53.331    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    53.422 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         1.503    54.925    poker/board_clk
+    SLICE_X8Y136         FDCE                                         r  poker/player1_data_reg[3][0]/C
+                         clock pessimism              0.259    55.184    
+                         clock uncertainty           -0.035    55.149    
+    SLICE_X8Y136         FDCE (Setup_fdce_C_D)        0.077    55.226    poker/player1_data_reg[3][0]
+  -------------------------------------------------------------------
+                         required time                         55.226    
+                         arrival time                         -25.164    
+  -------------------------------------------------------------------
+                         slack                                 30.061    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.105ns  (arrival time - required time)
+  Source:                 ee201_debouncer_2/debounce_count_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            ee201_debouncer_2/debounce_count_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.477ns  (logic 0.355ns (74.400%)  route 0.122ns (25.600%))
+  Logic Levels:           2  (CARRY4=2)
+  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.037ns
+    Source Clock Delay      (SCD):    1.524ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.644     0.894    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.605     1.524    ee201_debouncer_2/board_clk
+    SLICE_X0Y99          FDRE                                         r  ee201_debouncer_2/debounce_count_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y99          FDRE (Prop_fdre_C_Q)         0.141     1.665 r  ee201_debouncer_2/debounce_count_reg[3]/Q
+                         net (fo=1, routed)           0.121     1.787    ee201_debouncer_2/debounce_count_reg_n_0_[3]
+    SLICE_X0Y99          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.160     1.947 r  ee201_debouncer_2/debounce_count0_carry/CO[3]
+                         net (fo=1, routed)           0.001     1.947    ee201_debouncer_2/debounce_count0_carry_n_0
+    SLICE_X0Y100         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.054     2.001 r  ee201_debouncer_2/debounce_count0_carry__0/O[0]
+                         net (fo=1, routed)           0.000     2.001    ee201_debouncer_2/data0[5]
+    SLICE_X0Y100         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.699     1.136    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.872     2.037    ee201_debouncer_2/board_clk
+    SLICE_X0Y100         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[5]/C
+                         clock pessimism             -0.245     1.791    
+    SLICE_X0Y100         FDRE (Hold_fdre_C_D)         0.105     1.896    ee201_debouncer_2/debounce_count_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -1.896    
+                         arrival time                           2.001    
+  -------------------------------------------------------------------
+                         slack                                  0.105    
+
+Slack (MET) :             0.116ns  (arrival time - required time)
+  Source:                 ee201_debouncer_2/debounce_count_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            ee201_debouncer_2/debounce_count_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.488ns  (logic 0.366ns (74.977%)  route 0.122ns (25.023%))
+  Logic Levels:           2  (CARRY4=2)
+  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.037ns
+    Source Clock Delay      (SCD):    1.524ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.644     0.894    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.605     1.524    ee201_debouncer_2/board_clk
+    SLICE_X0Y99          FDRE                                         r  ee201_debouncer_2/debounce_count_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y99          FDRE (Prop_fdre_C_Q)         0.141     1.665 r  ee201_debouncer_2/debounce_count_reg[3]/Q
+                         net (fo=1, routed)           0.121     1.787    ee201_debouncer_2/debounce_count_reg_n_0_[3]
+    SLICE_X0Y99          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.160     1.947 r  ee201_debouncer_2/debounce_count0_carry/CO[3]
+                         net (fo=1, routed)           0.001     1.947    ee201_debouncer_2/debounce_count0_carry_n_0
+    SLICE_X0Y100         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.065     2.012 r  ee201_debouncer_2/debounce_count0_carry__0/O[2]
+                         net (fo=1, routed)           0.000     2.012    ee201_debouncer_2/data0[7]
+    SLICE_X0Y100         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.699     1.136    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.872     2.037    ee201_debouncer_2/board_clk
+    SLICE_X0Y100         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[7]/C
+                         clock pessimism             -0.245     1.791    
+    SLICE_X0Y100         FDRE (Hold_fdre_C_D)         0.105     1.896    ee201_debouncer_2/debounce_count_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -1.896    
+                         arrival time                           2.012    
+  -------------------------------------------------------------------
+                         slack                                  0.116    
+
+Slack (MET) :             0.138ns  (arrival time - required time)
+  Source:                 ee201_debouncer_4/FSM_onehot_state_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            ee201_debouncer_4/FSM_onehot_state_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.209ns  (logic 0.141ns (67.454%)  route 0.068ns (32.546%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.031ns
+    Source Clock Delay      (SCD):    1.514ns
+    Clock Pessimism Removal (CPR):    0.516ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.644     0.894    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.595     1.514    ee201_debouncer_4/board_clk
+    SLICE_X7Y110         FDPE                                         r  ee201_debouncer_4/FSM_onehot_state_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y110         FDPE (Prop_fdpe_C_Q)         0.141     1.655 r  ee201_debouncer_4/FSM_onehot_state_reg[0]/Q
+                         net (fo=3, routed)           0.068     1.723    ee201_debouncer_4/FSM_onehot_state_reg_n_0_[0]
+    SLICE_X7Y110         FDCE                                         r  ee201_debouncer_4/FSM_onehot_state_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.699     1.136    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.866     2.031    ee201_debouncer_4/board_clk
+    SLICE_X7Y110         FDCE                                         r  ee201_debouncer_4/FSM_onehot_state_reg[1]/C
+                         clock pessimism             -0.516     1.514    
+    SLICE_X7Y110         FDCE (Hold_fdce_C_D)         0.071     1.585    ee201_debouncer_4/FSM_onehot_state_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -1.585    
+                         arrival time                           1.723    
+  -------------------------------------------------------------------
+                         slack                                  0.138    
+
+Slack (MET) :             0.138ns  (arrival time - required time)
+  Source:                 ee201_debouncer_5/FSM_onehot_state_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            ee201_debouncer_5/FSM_onehot_state_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.209ns  (logic 0.141ns (67.454%)  route 0.068ns (32.546%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.033ns
+    Source Clock Delay      (SCD):    1.516ns
+    Clock Pessimism Removal (CPR):    0.516ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.644     0.894    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.597     1.516    ee201_debouncer_5/board_clk
+    SLICE_X5Y106         FDPE                                         r  ee201_debouncer_5/FSM_onehot_state_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y106         FDPE (Prop_fdpe_C_Q)         0.141     1.657 r  ee201_debouncer_5/FSM_onehot_state_reg[0]/Q
+                         net (fo=3, routed)           0.068     1.725    ee201_debouncer_5/FSM_onehot_state_reg_n_0_[0]
+    SLICE_X5Y106         FDCE                                         r  ee201_debouncer_5/FSM_onehot_state_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.699     1.136    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.867     2.033    ee201_debouncer_5/board_clk
+    SLICE_X5Y106         FDCE                                         r  ee201_debouncer_5/FSM_onehot_state_reg[1]/C
+                         clock pessimism             -0.516     1.516    
+    SLICE_X5Y106         FDCE (Hold_fdce_C_D)         0.071     1.587    ee201_debouncer_5/FSM_onehot_state_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -1.587    
+                         arrival time                           1.725    
+  -------------------------------------------------------------------
+                         slack                                  0.138    
+
+Slack (MET) :             0.141ns  (arrival time - required time)
+  Source:                 ee201_debouncer_2/debounce_count_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            ee201_debouncer_2/debounce_count_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.513ns  (logic 0.391ns (76.196%)  route 0.122ns (23.804%))
+  Logic Levels:           2  (CARRY4=2)
+  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.037ns
+    Source Clock Delay      (SCD):    1.524ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.644     0.894    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.605     1.524    ee201_debouncer_2/board_clk
+    SLICE_X0Y99          FDRE                                         r  ee201_debouncer_2/debounce_count_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y99          FDRE (Prop_fdre_C_Q)         0.141     1.665 r  ee201_debouncer_2/debounce_count_reg[3]/Q
+                         net (fo=1, routed)           0.121     1.787    ee201_debouncer_2/debounce_count_reg_n_0_[3]
+    SLICE_X0Y99          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.160     1.947 r  ee201_debouncer_2/debounce_count0_carry/CO[3]
+                         net (fo=1, routed)           0.001     1.947    ee201_debouncer_2/debounce_count0_carry_n_0
+    SLICE_X0Y100         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.090     2.037 r  ee201_debouncer_2/debounce_count0_carry__0/O[1]
+                         net (fo=1, routed)           0.000     2.037    ee201_debouncer_2/data0[6]
+    SLICE_X0Y100         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.699     1.136    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.872     2.037    ee201_debouncer_2/board_clk
+    SLICE_X0Y100         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[6]/C
+                         clock pessimism             -0.245     1.791    
+    SLICE_X0Y100         FDRE (Hold_fdre_C_D)         0.105     1.896    ee201_debouncer_2/debounce_count_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -1.896    
+                         arrival time                           2.037    
+  -------------------------------------------------------------------
+                         slack                                  0.141    
+
+Slack (MET) :             0.141ns  (arrival time - required time)
+  Source:                 ee201_debouncer_2/debounce_count_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            ee201_debouncer_2/debounce_count_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.513ns  (logic 0.391ns (76.196%)  route 0.122ns (23.804%))
+  Logic Levels:           2  (CARRY4=2)
+  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.037ns
+    Source Clock Delay      (SCD):    1.524ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.644     0.894    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.605     1.524    ee201_debouncer_2/board_clk
+    SLICE_X0Y99          FDRE                                         r  ee201_debouncer_2/debounce_count_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y99          FDRE (Prop_fdre_C_Q)         0.141     1.665 r  ee201_debouncer_2/debounce_count_reg[3]/Q
+                         net (fo=1, routed)           0.121     1.787    ee201_debouncer_2/debounce_count_reg_n_0_[3]
+    SLICE_X0Y99          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.160     1.947 r  ee201_debouncer_2/debounce_count0_carry/CO[3]
+                         net (fo=1, routed)           0.001     1.947    ee201_debouncer_2/debounce_count0_carry_n_0
+    SLICE_X0Y100         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.090     2.037 r  ee201_debouncer_2/debounce_count0_carry__0/O[3]
+                         net (fo=1, routed)           0.000     2.037    ee201_debouncer_2/data0[8]
+    SLICE_X0Y100         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.699     1.136    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.872     2.037    ee201_debouncer_2/board_clk
+    SLICE_X0Y100         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[8]/C
+                         clock pessimism             -0.245     1.791    
+    SLICE_X0Y100         FDRE (Hold_fdre_C_D)         0.105     1.896    ee201_debouncer_2/debounce_count_reg[8]
+  -------------------------------------------------------------------
+                         required time                         -1.896    
+                         arrival time                           2.037    
+  -------------------------------------------------------------------
+                         slack                                  0.141    
+
+Slack (MET) :             0.144ns  (arrival time - required time)
+  Source:                 ee201_debouncer_2/debounce_count_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            ee201_debouncer_2/debounce_count_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.516ns  (logic 0.394ns (76.334%)  route 0.122ns (23.666%))
+  Logic Levels:           3  (CARRY4=3)
+  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.037ns
+    Source Clock Delay      (SCD):    1.524ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.644     0.894    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.605     1.524    ee201_debouncer_2/board_clk
+    SLICE_X0Y99          FDRE                                         r  ee201_debouncer_2/debounce_count_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y99          FDRE (Prop_fdre_C_Q)         0.141     1.665 r  ee201_debouncer_2/debounce_count_reg[3]/Q
+                         net (fo=1, routed)           0.121     1.787    ee201_debouncer_2/debounce_count_reg_n_0_[3]
+    SLICE_X0Y99          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.160     1.947 r  ee201_debouncer_2/debounce_count0_carry/CO[3]
+                         net (fo=1, routed)           0.001     1.947    ee201_debouncer_2/debounce_count0_carry_n_0
+    SLICE_X0Y100         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.039     1.986 r  ee201_debouncer_2/debounce_count0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     1.986    ee201_debouncer_2/debounce_count0_carry__0_n_0
+    SLICE_X0Y101         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.054     2.040 r  ee201_debouncer_2/debounce_count0_carry__1/O[0]
+                         net (fo=1, routed)           0.000     2.040    ee201_debouncer_2/data0[9]
+    SLICE_X0Y101         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.699     1.136    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.872     2.037    ee201_debouncer_2/board_clk
+    SLICE_X0Y101         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[9]/C
+                         clock pessimism             -0.245     1.791    
+    SLICE_X0Y101         FDRE (Hold_fdre_C_D)         0.105     1.896    ee201_debouncer_2/debounce_count_reg[9]
+  -------------------------------------------------------------------
+                         required time                         -1.896    
+                         arrival time                           2.040    
+  -------------------------------------------------------------------
+                         slack                                  0.144    
+
+Slack (MET) :             0.155ns  (arrival time - required time)
+  Source:                 ee201_debouncer_2/debounce_count_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            ee201_debouncer_2/debounce_count_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.527ns  (logic 0.405ns (76.828%)  route 0.122ns (23.172%))
+  Logic Levels:           3  (CARRY4=3)
+  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.037ns
+    Source Clock Delay      (SCD):    1.524ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.644     0.894    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.605     1.524    ee201_debouncer_2/board_clk
+    SLICE_X0Y99          FDRE                                         r  ee201_debouncer_2/debounce_count_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y99          FDRE (Prop_fdre_C_Q)         0.141     1.665 r  ee201_debouncer_2/debounce_count_reg[3]/Q
+                         net (fo=1, routed)           0.121     1.787    ee201_debouncer_2/debounce_count_reg_n_0_[3]
+    SLICE_X0Y99          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.160     1.947 r  ee201_debouncer_2/debounce_count0_carry/CO[3]
+                         net (fo=1, routed)           0.001     1.947    ee201_debouncer_2/debounce_count0_carry_n_0
+    SLICE_X0Y100         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.039     1.986 r  ee201_debouncer_2/debounce_count0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     1.986    ee201_debouncer_2/debounce_count0_carry__0_n_0
+    SLICE_X0Y101         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.065     2.051 r  ee201_debouncer_2/debounce_count0_carry__1/O[2]
+                         net (fo=1, routed)           0.000     2.051    ee201_debouncer_2/data0[11]
+    SLICE_X0Y101         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.699     1.136    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.872     2.037    ee201_debouncer_2/board_clk
+    SLICE_X0Y101         FDRE                                         r  ee201_debouncer_2/debounce_count_reg[11]/C
+                         clock pessimism             -0.245     1.791    
+    SLICE_X0Y101         FDRE (Hold_fdre_C_D)         0.105     1.896    ee201_debouncer_2/debounce_count_reg[11]
+  -------------------------------------------------------------------
+                         required time                         -1.896    
+                         arrival time                           2.051    
+  -------------------------------------------------------------------
+                         slack                                  0.155    
+
+Slack (MET) :             0.157ns  (arrival time - required time)
+  Source:                 ee201_debouncer_5/FSM_onehot_state_reg[8]/C
+                            (rising edge-triggered cell FDCE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            ee201_debouncer_5/FSM_onehot_state_reg[0]/D
+                            (rising edge-triggered cell FDPE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.262ns  (logic 0.186ns (70.923%)  route 0.076ns (29.077%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.033ns
+    Source Clock Delay      (SCD):    1.516ns
+    Clock Pessimism Removal (CPR):    0.503ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.644     0.894    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.597     1.516    ee201_debouncer_5/board_clk
+    SLICE_X4Y106         FDCE                                         r  ee201_debouncer_5/FSM_onehot_state_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y106         FDCE (Prop_fdce_C_Q)         0.141     1.657 r  ee201_debouncer_5/FSM_onehot_state_reg[8]/Q
+                         net (fo=5, routed)           0.076     1.734    ee201_debouncer_5/FSM_onehot_state_reg_n_0_[8]
+    SLICE_X5Y106         LUT3 (Prop_lut3_I1_O)        0.045     1.779 r  ee201_debouncer_5/FSM_onehot_state[0]_i_1__3/O
+                         net (fo=1, routed)           0.000     1.779    ee201_debouncer_5/FSM_onehot_state[0]_i_1__3_n_0
+    SLICE_X5Y106         FDPE                                         r  ee201_debouncer_5/FSM_onehot_state_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.699     1.136    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.867     2.033    ee201_debouncer_5/board_clk
+    SLICE_X5Y106         FDPE                                         r  ee201_debouncer_5/FSM_onehot_state_reg[0]/C
+                         clock pessimism             -0.503     1.529    
+    SLICE_X5Y106         FDPE (Hold_fdpe_C_D)         0.092     1.621    ee201_debouncer_5/FSM_onehot_state_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.621    
+                         arrival time                           1.779    
+  -------------------------------------------------------------------
+                         slack                                  0.157    
+
+Slack (MET) :             0.166ns  (arrival time - required time)
+  Source:                 ee201_debouncer_2/MCEN_count_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            ee201_debouncer_2/MCEN_count_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.300ns  (logic 0.186ns (61.929%)  route 0.114ns (38.071%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.035ns
+    Source Clock Delay      (SCD):    1.516ns
+    Clock Pessimism Removal (CPR):    0.505ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.644     0.894    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.597     1.516    ee201_debouncer_2/board_clk
+    SLICE_X3Y109         FDRE                                         r  ee201_debouncer_2/MCEN_count_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y109         FDRE (Prop_fdre_C_Q)         0.141     1.657 r  ee201_debouncer_2/MCEN_count_reg[1]/Q
+                         net (fo=5, routed)           0.114     1.772    ee201_debouncer_2/MCEN_count_reg_n_0_[1]
+    SLICE_X2Y109         LUT6 (Prop_lut6_I0_O)        0.045     1.817 r  ee201_debouncer_2/MCEN_count[3]_i_2__0/O
+                         net (fo=1, routed)           0.000     1.817    ee201_debouncer_2/MCEN_count[3]_i_2__0_n_0
+    SLICE_X2Y109         FDRE                                         r  ee201_debouncer_2/MCEN_count_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    BUFGP1/I
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  BUFGP1/IBUF/O
+                         net (fo=1, routed)           0.699     1.136    BUFGP1/IBUFG_2_BUFG
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  BUFGP1/BUFG/O
+                         net (fo=387, routed)         0.870     2.035    ee201_debouncer_2/board_clk
+    SLICE_X2Y109         FDRE                                         r  ee201_debouncer_2/MCEN_count_reg[3]/C
+                         clock pessimism             -0.505     1.529    
+    SLICE_X2Y109         FDRE (Hold_fdre_C_D)         0.121     1.650    ee201_debouncer_2/MCEN_count_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.650    
+                         arrival time                           1.817    
+  -------------------------------------------------------------------
+                         slack                                  0.166    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         ClkPort
+Waveform(ns):       { 0.000 25.000 }
+Period(ns):         50.000
+Sources:            { ClkPort }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     BUFG/I   n/a            2.155         50.000      47.845     BUFGCTRL_X0Y16  BUFGP1/BUFG/I
+Min Period        n/a     FDCE/C   n/a            1.000         50.000      49.000     SLICE_X3Y112    ee201_debouncer_1/FSM_onehot_state_reg[4]/C
+Min Period        n/a     FDCE/C   n/a            1.000         50.000      49.000     SLICE_X2Y112    ee201_debouncer_1/FSM_onehot_state_reg[5]/C
+Min Period        n/a     FDCE/C   n/a            1.000         50.000      49.000     SLICE_X3Y112    ee201_debouncer_1/FSM_onehot_state_reg[6]/C
+Min Period        n/a     FDCE/C   n/a            1.000         50.000      49.000     SLICE_X3Y112    ee201_debouncer_1/FSM_onehot_state_reg[7]/C
+Min Period        n/a     FDCE/C   n/a            1.000         50.000      49.000     SLICE_X2Y112    ee201_debouncer_1/FSM_onehot_state_reg[8]/C
+Min Period        n/a     FDRE/C   n/a            1.000         50.000      49.000     SLICE_X4Y112    ee201_debouncer_1/MCEN_count_reg[0]/C
+Min Period        n/a     FDRE/C   n/a            1.000         50.000      49.000     SLICE_X4Y112    ee201_debouncer_1/MCEN_count_reg[1]/C
+Min Period        n/a     FDRE/C   n/a            1.000         50.000      49.000     SLICE_X4Y112    ee201_debouncer_1/MCEN_count_reg[2]/C
+Min Period        n/a     FDRE/C   n/a            1.000         50.000      49.000     SLICE_X4Y112    ee201_debouncer_1/MCEN_count_reg[3]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         25.000      24.500     SLICE_X3Y101    ee201_debouncer_5/debounce_count_reg[0]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         25.000      24.500     SLICE_X3Y101    ee201_debouncer_5/debounce_count_reg[0]/C
+Low Pulse Width   Fast    FDPE/C   n/a            0.500         25.000      24.500     SLICE_X6Y124    poker/player2balance_reg[4]/C
+Low Pulse Width   Fast    FDPE/C   n/a            0.500         25.000      24.500     SLICE_X6Y124    poker/player2balance_reg[5]/C
+Low Pulse Width   Fast    FDPE/C   n/a            0.500         25.000      24.500     SLICE_X6Y124    poker/player2balance_reg[6]/C
+Low Pulse Width   Fast    FDPE/C   n/a            0.500         25.000      24.500     SLICE_X6Y124    poker/player2balance_reg[7]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         25.000      24.500     SLICE_X9Y128    poker/player2hand_reg[0]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         25.000      24.500     SLICE_X9Y128    poker/player2hand_reg[1]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         25.000      24.500     SLICE_X9Y128    poker/player2hand_reg[2]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         25.000      24.500     SLICE_X2Y121    poker/pot_reg[3]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         25.000      24.500     SLICE_X3Y112    ee201_debouncer_1/FSM_onehot_state_reg[4]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         25.000      24.500     SLICE_X2Y112    ee201_debouncer_1/FSM_onehot_state_reg[5]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         25.000      24.500     SLICE_X3Y112    ee201_debouncer_1/FSM_onehot_state_reg[6]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         25.000      24.500     SLICE_X3Y112    ee201_debouncer_1/FSM_onehot_state_reg[7]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         25.000      24.500     SLICE_X2Y112    ee201_debouncer_1/FSM_onehot_state_reg[8]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         25.000      24.500     SLICE_X2Y109    ee201_debouncer_2/MCEN_count_reg[0]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         25.000      24.500     SLICE_X3Y109    ee201_debouncer_2/MCEN_count_reg[1]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         25.000      24.500     SLICE_X3Y109    ee201_debouncer_2/MCEN_count_reg[2]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         25.000      24.500     SLICE_X2Y109    ee201_debouncer_2/MCEN_count_reg[3]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         25.000      24.500     SLICE_X6Y107    ee201_debouncer_4/debounce_count_reg[10]/C
+
+
+

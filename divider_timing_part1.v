@@ -11,23 +11,28 @@ module divider_timing (Xin, Yin, Start, Ack, Clk, Reset,  SCEN,  // Notice SCEN
                 Done, Quotient, Remainder, Q5card, Q4card, Q3card, Qhand, Qstart);
 
 input Start, Ack, Clk, Reset;
+input [7:0] Xin, Yin;
 output Done;
 input SCEN;
-output [3:0] card1, card2, card3, card4, card5, player1card1, player1card2, player2card1, player2card2;
-output playerTurn;
-output dispCards;
-output gameover;
-output winner;
+output [7:0] Quotient, Remainder;
+output Q5card, Q4card, Q3card, Qhand, Qstart;
 
+reg [4:0] state;
+
+//DO WE MAKE THESE OUTPUTS?
 reg [3:0] card1, card2, card3, card4, card5, player1card1, player1card2, player2card1, player2card2;
+reg playerTurn;
+reg dispCards;
+reg gameover;
+reg winner;
+
+//reg [3:0] card1, card2, card3, card4, card5, player1card1, player1card2, player2card1, player2card2;
 reg [5:0] gamestate;
 reg [4:0] player1state;
 reg [4:0] player2state;
-reg [0] flag;
-reg playerTurn;
-reg dispCards;
-reg [3:0] player1_data [0:6]
-reg [3:0] player2_data [0:6]
+reg flag;
+reg [3:0] player1_data [0:6];
+reg [3:0] player2_data [0:6];
 reg [3:0] i, j;
 reg [3:0] temp;
 reg[3:0] player1highcard;
@@ -38,36 +43,35 @@ reg player1sorted;
 reg player2sorted;
 reg player1High;
 reg player2High;
-reg gameover;
-reg winner;
 reg [2:0] numpairs;
 
 localparam
-START = 5'b00001,
+START   = 5'b00001,
 HAND	= 5'b00010,
-3CARD	= 5'b00100;
-4CARD = 5'b01000;
-5CARD = 5'b10000;
+THREE	= 5'b00100,
+FOUR    = 5'b01000,
+FIVE    = 5'b10000,
 
 NOMOVE = 6'b000001,
 CHECK	= 6'b000010,
-BET	= 6'b000100;
-CALL = 6'b001000;
-FOLD = 6'b010000;
-WINNER = 6'b100000
+BET	= 6'b000100,
+CALL = 6'b001000,
+FOLD = 6'b010000,
+WINNER = 6'b100000,
 
-HIGHCARD = 3'b000;
-PAIR = 3'b001;
-TWOPAIR = 3'b010;
-THREE = 3'b011;
-STRAIGHT = 3'b100;
-FULLHOUSE = 3'b101;
-FOUR = 3'b110;
+HIGHCARD = 3'b000,
+PAIR = 3'b001,
+TWOPAIR = 3'b010,
+TRIPLE = 3'b011,
+STRAIGHT = 3'b100,
+FULLHOUSE = 3'b101,
+QUAD = 3'b110;
 
 assign {Q5card, Q4card, Q3card, Qhand, Qstart} = state;
 
 assign NEXT_TURN = player1state != NOMOVE && player2state != NOMOVE;
 assign END_GAME = player1state == FOLD || player2state == FOLD;
+
 always @(posedge Clk, posedge Reset) 
 
   begin  : CU_n_DU
@@ -76,14 +80,14 @@ always @(posedge Clk, posedge Reset)
            state <= START;
            playerTurn <= 0;
            card1 <= 0; 
-           card2<= 0; 
-           card3<= 0; 
-           card4<= 0; 
-           card5<= 0; 
-           player1card1<= 0; 
-           player1card2<= 0; 
-           player2card1<= 0; 
-           player2card2<= 0;
+           card2 <= 0; 
+           card3 <= 0; 
+           card4 <= 0; 
+           card5 <= 0; 
+           player1card1 <= 0; 
+           player1card2 <= 0; 
+           player2card1 <= 0; 
+           player2card2 <= 0;
            player1state <= NOMOVE;
            player2state <= NOMOVE;
            flag <= 0;
@@ -118,106 +122,108 @@ always @(posedge Clk, posedge Reset)
                   // state transitions in the control unit
                   if (Start)
                   begin
-                      state <= HAND;
+                     state <= HAND;
+                  end
+                  
                   // RTL operations in the Data Path 
                     playerTurn <= 0;
-                     card1 <= 0; 
-                     card2<= 0; 
-                      card3<= 0; 
-                      card4<= 0; 
-                      card5<= 0; 
-                      player1card1<= 0; 
-                      player1card2<= 0; 
-                      player2card1<= 0; 
-                      player2card2<= 0;
-                      player1state <= NOMOVE;
-                      player2state <= NOMOVE;
-                      flag <= 0;
-                      dispCards <= 0;
-                      player1sorted <= 0;
-                      player2sorted <= 0;
-                      player1High <= 0;
-                      player2High <= 0;
-                       gameover <= 0;
-                      player1_data[0] <= 0;
-                      player1_data[1] <= 0;
-                      player1_data[2] <= 0;
-                      player1_data[3] <= 0;
-                      player1_data[4] <= 0;
-                      player1_data[5] <= 0;
-                      player1_data[6] <= 0;
-
-                      player2_data[0] <= 0;
-                      player2_data[1] <= 0;
-                      player2_data[2] <= 0;
-                      player2_data[3] <= 0;
-                      player2_data[4] <= 0;
-                      player2_data[5] <= 0;
-                      player2_data[6] <= 0;
-                  end
-              end
+                    card1 <= 0; 
+                    card2 <= 0; 
+                    card3 <= 0; 
+                    card4 <= 0; 
+                    card5 <= 0; 
+                    player1card1 <= 0; 
+                    player1card2 <= 0; 
+                    player2card1 <= 0; 
+                    player2card2 <= 0;
+                    player1state <= NOMOVE;
+                    player2state <= NOMOVE;
+                    flag <= 0;
+                    dispCards <= 0;
+                    player1sorted <= 0;
+                    player2sorted <= 0;
+                    player1High <= 0;
+                    player2High <= 0;
+                    gameover <= 0;
+                    player1_data[0] <= 0;
+                    player1_data[1] <= 0;
+                    player1_data[2] <= 0;
+                    player1_data[3] <= 0;
+                    player1_data[4] <= 0;
+                    player1_data[5] <= 0;
+                    player1_data[6] <= 0;
+                    
+                    player2_data[0] <= 0;
+                    player2_data[1] <= 0;
+                    player2_data[2] <= 0;
+                    player2_data[3] <= 0;
+                    player2_data[4] <= 0;
+                    player2_data[5] <= 0;
+                    player2_data[6] <= 0;
+            end
             HAND :
 			  if (SCEN)  // Notice SCEN
               begin
                  // state transitions in the control unit
-                 if(flag == 0)
-                 begin
-                  flag <= 1;
-                  player1card1 <= $random % 13 + 1;
-                  player1card2 <= $random % 13 + 1;
-                  player2card1 <= $random % 13 + 1;
-                  player2card2 <= $random % 13 + 1;
-                 end
-                  if (NEXT_TURN )
-                  begin
-                      state <= 3CARD;
-                      flag <= 0;
-                       player1state <= NOMOVE;
-                      player2state <= NOMOVE;
-                  end
-                  else if(END_GAME)
-                  begin
+                if(flag == 0)
+                begin 
+                    //NOTE: MAYBE FIX LATER, this is not real poker b/c so many repeat cards exist
+                    flag <= 1;
+                    player1card1 <= $random % 13 + 1;
+                    player1card2 <= $random % 13 + 1;
+                    player2card1 <= $random % 13 + 1;
+                    player2card2 <= $random % 13 + 1;
+                end
+                if (NEXT_TURN )
+                begin
+                    state <= THREE;
+                    flag <= 0;
+                    player1state <= NOMOVE;
+                    player2state <= NOMOVE;
+                end
+                else if(END_GAME)
+                begin
                     state <= WINNER;
                     flag <= 0;
-                  end
-                  // RTL operations in the Data Path 
-                  else if(playerTurn == 0)
-                  begin
+                end
+                // RTL operations in the Data Path 
+                else if(playerTurn == 0)
+                begin
                     if(Ack) //changes card visibility
-                    begin
-                      if(dispCards == 1)
-                      begin
-                        dispCards <= 0;
-                      end 
-                      else
-                      begin
-                        dispCards <= 1;
-                      end
+                        begin
+                        if(dispCards == 1)
+                            begin
+                                dispCards <= 0;
+                            end 
+                        else
+                        begin
+                            dispCards <= 1;
+                        end 
                     end
                     if(Call)
-                    begin
-                      playerTurn <= 1;
-                      dispCards <= 0;
-                      player1state <= CALL;
-                    end
+                        begin
+                            playerTurn <= 1;
+                            dispCards <= 0;
+                            player1state <= CALL;
+                        end
                     if(Bet)
-                    begin
-                      playerTurn <= 1;
-                      dispCards <= 0;
-                      player1state <= BET;
-                    end
+                        begin
+                            playerTurn <= 1;
+                            dispCards <= 0;
+                            player1state <= BET;
+                        end
                     if(Check)
-                    begin
-                      playerTurn <= 1;
-                      dispCards <= 0;
-                      player1state <= CHECK;
-                    end
+                        begin
+                            playerTurn <= 1;
+                            dispCards <= 0;
+                            player1state <= CHECK;
+                        end         
                     if(Fold)
-                    begin
-                      playerTurn <= 1;
-                      dispCards <= 0;
-                      player1state <= FOLD;
-                    end
+                        begin
+                            playerTurn <= 1;
+                            dispCards <= 0;
+                            player1state <= FOLD;
+                        end
                     //player1 makes there move
                   end
                   else if (playerTurn == 1)
@@ -274,7 +280,7 @@ always @(posedge Clk, posedge Reset)
                  end
                   if (NEXT_TURN)
                   begin
-                      state <= 4CARD;
+                      state <= FOUR;
                        player1state <= NOMOVE;
                       player2state <= NOMOVE;
                       flag <= 0;

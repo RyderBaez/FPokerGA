@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Apr 26 21:46:56 2024
+# Process ID: 3912
+# Current directory: C:/Users/ericsc/FPokerGA/fpokerga/fpokerga.runs/impl_1
+# Command line: vivado.exe -log poker_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source poker_top.tcl -notrace
+# Log file: C:/Users/ericsc/FPokerGA/fpokerga/fpokerga.runs/impl_1/poker_top.vdi
+# Journal file: C:/Users/ericsc/FPokerGA/fpokerga/fpokerga.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source poker_top.tcl -notrace

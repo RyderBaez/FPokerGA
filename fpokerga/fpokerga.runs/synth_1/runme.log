@@ -1,0 +1,496 @@
+
+*** Running vivado
+    with args -log poker_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source poker_top.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source poker_top.tcl -notrace
+Command: synth_design -top poker_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9584
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1116.090 ; gain = 8.859
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'poker_top' [C:/Users/ericsc/FPokerGA/poker_top.v:9]
+INFO: [Synth 8-6157] synthesizing module 'BUFGP' [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1239]
+INFO: [Synth 8-6155] done synthesizing module 'BUFGP' (1#1) [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1239]
+INFO: [Synth 8-6157] synthesizing module 'ee201_debouncer' [C:/Users/ericsc/FPokerGA/ee201_debounce_DPB_SCEN_CCEN_MCEN.v:90]
+	Parameter N_dc bound to: 25 - type: integer 
+	Parameter INI bound to: 6'b000000 
+	Parameter WQ bound to: 6'b000001 
+	Parameter SCEN_st bound to: 6'b111100 
+	Parameter WH bound to: 6'b100000 
+	Parameter MCEN_st bound to: 6'b101100 
+	Parameter CCEN_st bound to: 6'b100100 
+	Parameter MCEN_cont bound to: 6'b101101 
+	Parameter CCR bound to: 6'b100001 
+	Parameter WFCR bound to: 6'b100010 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/ericsc/FPokerGA/ee201_debounce_DPB_SCEN_CCEN_MCEN.v:151]
+INFO: [Synth 8-6155] done synthesizing module 'ee201_debouncer' (2#1) [C:/Users/ericsc/FPokerGA/ee201_debounce_DPB_SCEN_CCEN_MCEN.v:90]
+INFO: [Synth 8-6157] synthesizing module 'poker' [C:/Users/ericsc/FPokerGA/poker.v:8]
+	Parameter START bound to: 6'b000001 
+	Parameter HAND bound to: 6'b000010 
+	Parameter THREE bound to: 6'b000100 
+	Parameter FOUR bound to: 6'b001000 
+	Parameter FIVE bound to: 6'b010000 
+	Parameter WINNER bound to: 6'b100000 
+	Parameter NOMOVE bound to: 6'b000001 
+	Parameter CHECK bound to: 6'b000010 
+	Parameter BET bound to: 6'b000100 
+	Parameter CALL bound to: 6'b001000 
+	Parameter FOLD bound to: 6'b010000 
+	Parameter IN bound to: 6'b100000 
+	Parameter HIGHCARD bound to: 3'b000 
+	Parameter PAIR bound to: 3'b001 
+	Parameter TWOPAIR bound to: 3'b010 
+	Parameter TRIPLE bound to: 3'b011 
+	Parameter STRAIGHT bound to: 3'b100 
+	Parameter FULLHOUSE bound to: 3'b101 
+	Parameter QUAD bound to: 3'b110 
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:102]
+WARNING: [Synth 8-6090] variable 'randomNum' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:149]
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:157]
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:203]
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:213]
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:215]
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:217]
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:368]
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:370]
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:372]
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:521]
+WARNING: [Synth 8-324] index 9 out of range [C:/Users/ericsc/FPokerGA/poker.v:670]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-324] index 7 out of range [C:/Users/ericsc/FPokerGA/poker.v:863]
+WARNING: [Synth 8-324] index 7 out of range [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-324] index 7 out of range [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:867]
+WARNING: [Synth 8-6090] variable 'player1_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:868]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-324] index 7 out of range [C:/Users/ericsc/FPokerGA/poker.v:880]
+WARNING: [Synth 8-324] index 7 out of range [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-324] index 7 out of range [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:885]
+WARNING: [Synth 8-6090] variable 'player2_data' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ericsc/FPokerGA/poker.v:884]
+INFO: [Common 17-14] Message 'Synth 8-6090' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'poker' (3#1) [C:/Users/ericsc/FPokerGA/poker.v:8]
+WARNING: [Synth 8-689] width (6) of port connection 'Player1state' does not match port width (1) of module 'poker' [C:/Users/ericsc/FPokerGA/poker_top.v:144]
+WARNING: [Synth 8-689] width (6) of port connection 'Player2state' does not match port width (1) of module 'poker' [C:/Users/ericsc/FPokerGA/poker_top.v:144]
+INFO: [Synth 8-226] default block is never used [C:/Users/ericsc/FPokerGA/poker_top.v:272]
+INFO: [Synth 8-6155] done synthesizing module 'poker_top' (4#1) [C:/Users/ericsc/FPokerGA/poker_top.v:9]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1196.492 ; gain = 89.262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1196.492 ; gain = 89.262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1196.492 ; gain = 89.262
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1196.492 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc]
+WARNING: [Vivado 12-507] No nets matched 'Sw8'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:76]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-through [get_nets Sw8]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:76]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-507] No nets matched 'Sw9'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:77]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-through [get_nets Sw9]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:77]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-507] No nets matched 'Sw10'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:78]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-through [get_nets Sw10]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:78]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-507] No nets matched 'Sw11'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:79]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-through [get_nets Sw11]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:79]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-507] No nets matched 'Sw12'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:80]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-through [get_nets Sw12]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:80]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-507] No nets matched 'Sw13'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:81]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-through [get_nets Sw13]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:81]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-507] No nets matched 'Sw14'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:82]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-through [get_nets Sw14]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:82]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-507] No nets matched 'Ld0'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:137]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld0]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:137]
+WARNING: [Vivado 12-507] No nets matched 'Ld1'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:138]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld1]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:138]
+WARNING: [Vivado 12-507] No nets matched 'Ld2'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:139]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld2]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:139]
+WARNING: [Vivado 12-507] No nets matched 'Ld3'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:140]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld3]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:140]
+WARNING: [Vivado 12-507] No nets matched 'Ld4'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:141]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld4]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:141]
+WARNING: [Vivado 12-507] No nets matched 'Ld5'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:142]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld5]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:142]
+WARNING: [Vivado 12-507] No nets matched 'Ld6'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:143]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld6]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:143]
+WARNING: [Vivado 12-507] No nets matched 'Ld7'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:144]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld7]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:144]
+WARNING: [Vivado 12-507] No nets matched 'Ld8'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:145]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld8]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:145]
+WARNING: [Vivado 12-507] No nets matched 'Ld9'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:146]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld9]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:146]
+WARNING: [Vivado 12-507] No nets matched 'Ld10'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:147]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld10]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:147]
+WARNING: [Vivado 12-507] No nets matched 'Ld11'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:148]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld11]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:148]
+WARNING: [Vivado 12-507] No nets matched 'Ld12'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:149]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld12]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:149]
+WARNING: [Vivado 12-507] No nets matched 'Ld13'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:150]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld13]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:150]
+WARNING: [Vivado 12-507] No nets matched 'Ld14'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:151]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld14]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:151]
+WARNING: [Vivado 12-507] No nets matched 'Ld15'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:152]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Ld15]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:152]
+WARNING: [Vivado 12-507] No nets matched 'Dp'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:234]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -endpoints_only -flat -from [get_nets Dp]'. [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc:234]
+Finished Parsing XDC File [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/ericsc/FPokerGA/ee354_divider_top_A7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/poker_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/poker_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1309.059 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  BUFGP => BUFGP (BUFG, IBUF): 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1309.059 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1309.059 ; gain = 201.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1309.059 ; gain = 201.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1309.059 ; gain = 201.828
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ee201_debouncer'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'poker'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                     INI |                        000000001 |                           000000
+                      WQ |                        000000010 |                           000001
+                 SCEN_st |                        000000100 |                           111100
+                      WH |                        000001000 |                           100000
+                 MCEN_st |                        000010000 |                           101100
+                 CCEN_st |                        000100000 |                           100100
+               MCEN_cont |                        001000000 |                           101101
+                     CCR |                        010000000 |                           100001
+                    WFCR |                        100000000 |                           100010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'ee201_debouncer'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                   START |                           000001 |                           000001
+                    HAND |                           000010 |                           000010
+                   THREE |                           000100 |                           000100
+                    FOUR |                           001000 |                           001000
+                    FIVE |                           010000 |                           010000
+                  WINNER |                           100000 |                           100000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'poker'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1309.059 ; gain = 201.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   25 Bit       Adders := 5     
+	   3 Input    8 Bit       Adders := 4     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    5 Bit       Adders := 12    
+	   2 Input    4 Bit       Adders := 9     
+	   6 Input    3 Bit       Adders := 2     
++---Registers : 
+	               25 Bit    Registers := 5     
+	               13 Bit    Registers := 1     
+	                8 Bit    Registers := 5     
+	                6 Bit    Registers := 3     
+	                4 Bit    Registers := 30    
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   9 Input   25 Bit        Muxes := 5     
+	   3 Input   13 Bit        Muxes := 2     
+	   7 Input   13 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 3     
+	   9 Input    9 Bit        Muxes := 5     
+	   2 Input    9 Bit        Muxes := 25    
+	   2 Input    8 Bit        Muxes := 11    
+	   7 Input    8 Bit        Muxes := 4     
+	   9 Input    6 Bit        Muxes := 5     
+	   2 Input    6 Bit        Muxes := 11    
+	   7 Input    6 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 2     
+	   9 Input    4 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 178   
+	   3 Input    4 Bit        Muxes := 3     
+	   7 Input    4 Bit        Muxes := 19    
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 96    
+	   9 Input    1 Bit        Muxes := 15    
+	   3 Input    1 Bit        Muxes := 5     
+	   4 Input    1 Bit        Muxes := 1     
+	   7 Input    1 Bit        Muxes := 35    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1441.859 ; gain = 334.629
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 1441.859 ; gain = 334.629
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:45 ; elapsed = 00:01:47 . Memory (MB): peak = 1672.984 ; gain = 565.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:46 ; elapsed = 00:01:48 . Memory (MB): peak = 1675.398 ; gain = 568.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1675.398 ; gain = 568.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1675.398 ; gain = 568.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:50 ; elapsed = 00:01:52 . Memory (MB): peak = 1675.398 ; gain = 568.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:50 ; elapsed = 00:01:52 . Memory (MB): peak = 1675.398 ; gain = 568.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:50 ; elapsed = 00:01:52 . Memory (MB): peak = 1675.398 ; gain = 568.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:50 ; elapsed = 00:01:52 . Memory (MB): peak = 1675.398 ; gain = 568.168
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    57|
+|2     |LUT1   |     7|
+|3     |LUT2   |   125|
+|4     |LUT3   |   126|
+|5     |LUT4   |   194|
+|6     |LUT5   |   217|
+|7     |LUT6   |   508|
+|8     |FDCE   |   196|
+|9     |FDPE   |    30|
+|10    |FDRE   |   161|
+|11    |BUFGP  |     1|
+|12    |IBUF   |    15|
+|13    |OBUF   |    17|
+|14    |OBUFT  |    16|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:50 ; elapsed = 00:01:52 . Memory (MB): peak = 1675.398 ; gain = 568.168
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:41 ; elapsed = 00:01:49 . Memory (MB): peak = 1675.398 ; gain = 455.602
+Synthesis Optimization Complete : Time (s): cpu = 00:01:50 ; elapsed = 00:01:52 . Memory (MB): peak = 1675.398 ; gain = 568.168
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1675.398 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 58 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1682.109 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  BUFGP => BUFGP (BUFG, IBUF): 1 instance 
+
+INFO: [Common 17-83] Releasing license: Synthesis
+32 Infos, 160 Warnings, 7 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:57 ; elapsed = 00:02:00 . Memory (MB): peak = 1682.109 ; gain = 574.879
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ericsc/FPokerGA/fpokerga/fpokerga.runs/synth_1/poker_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file poker_top_utilization_synth.rpt -pb poker_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 26 22:42:03 2024...
